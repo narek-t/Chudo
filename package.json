@@ -1,7 +1,7 @@
 {
-  "name": "my_blank_template",
+  "name": "chudo",
   "version": "1.0.0",
-  "description": "Blank template for frontend developers using gulp 4, sass, jade, autoprefixer, auto sprite generator and much more",
+  "description": "Сайт памперсов :)",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

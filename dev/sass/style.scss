@@ -1,8 +1,602 @@
 @import "_normalize.scss";
 @import "_variables.scss";
 @import "_sprite.scss";
-@import "_mixins.scss";
+@import "_gridlex.scss";
+@import "_selectric.scss";
+@import "_swiper.min.scss";
+
+
 
 body {
-	background: $linkColor;
+	background: url(../img/bg.png) top center no-repeat;
+	background-size: cover;
 }
+html, body {
+  height: 100%;
+  font-family: $fontFamily;
+}
+.all-wrapper {
+  min-height: 100%;
+  margin-bottom: -246px; 
+}
+.all-wrapper::after {
+  content: "";
+  display: block;
+}
+.site-footer, .all-wrapper::after {
+  height: 246px; 
+}
+
+.container {
+	max-width: 1160px;
+	padding: 0 10px;
+	margin: auto;
+}
+
+//TOP LINE
+.top-line {
+	background: #fff;
+	padding: 20px 0;
+	font-size: 17px;
+	.container div {
+		float: left;
+	}
+	i {
+		display: inline-block;
+		margin-right: 12px;
+		vertical-align: middle;
+		position: relative;
+		top: -2px;
+	}
+	i.home {
+		@include sprite($home)
+	}
+	i.heart {
+		@include sprite($heart)
+	}
+	i.phone {
+		@include sprite($phone)
+	}
+	i.user {
+		@include sprite($user)
+	}
+	div.login-register {
+		float: right;
+		i {
+			
+		}
+		a {
+			color: $linkColor;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		span {
+			margin: 0 10px;
+			color: $linkColor;
+		}
+	}
+	.favorite-shop {
+		margin-right: 100px;
+	}
+	.favorite-shop, .my-city {
+		color: $linkColor;
+		a {
+			color: #707070;
+			text-decoration: none;
+			margin-left: 5px;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	.shop-phone {
+		margin-left: 60px;
+		a {
+			color: $linkColor;
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+//TOP NAV
+.top-nav-wrapper {
+	background-color: #ffb400;
+	box-shadow: 0 2px 0 #ff9600, inset  0  5px 5px -5px rgba(0, 0, 0, .4);
+	padding: 16px 0;
+	.toggle-mobile-nav {
+		display: none;
+	}
+	.top-nav {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		a {
+			text-transform: uppercase;
+			font-size: 16px;
+			color: #fffbc2;
+			text-decoration: none;
+			border-bottom: 2px solid transparent;
+			padding-bottom: 3px;
+			@media screen and (max-width: 980px) {
+				color: red;
+			}
+		}
+		.current-menu-item a,
+		a:hover {
+			border-color: #fffbc2;
+		}
+	}
+}
+
+//LOGO LINE
+.logo-row {
+	padding: 30px 0 25px;
+	&__logo {
+		float: left;
+	}
+	.cart-side {
+		float: right;
+		&__item {
+			display: inline-block;
+			vertical-align: top;
+			margin-left: 10px;
+			&:first-child {
+				margin-left: 0;
+			}
+			&.callback {
+				font-size: 17px;
+				color: #fff;
+				font-family: 'bsansbold';
+				text-decoration: none;
+				width: 106px;
+				padding: 15px;
+				text-align: center;
+				background-color: #92de00;
+				border-radius: 15px;
+				box-shadow: 0 2px 0 #6ba301;
+				position: relative;
+				line-height: 21px;
+				transition: all .3s ease-in-out;
+				&:hover {
+					background-color: #88cc06;
+				}
+				span {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					left: 0;
+					top: 0;
+					background: url(../img/phone-big.png) center center no-repeat;
+				}
+			}
+			&.social {
+				background-color: white;
+				border-radius: 15px;
+				box-shadow: 0 2px 0 #dad9d9;
+				padding: 15px;
+				margin-right: 40px;
+				p.heading {
+					font-size: 15px;
+					color: $linkColor;
+					margin: 0 0 5px;
+					font-size: 15px;
+					font-family: 'bsansbold';
+				}
+				ul {
+					list-style-type: none;
+					margin: 0;
+					padding: 0;
+					display: flex;
+					flex-flow: row nowrap;
+					justify-content: space-between;
+					a {
+						display: block;
+						width: 35px;
+						height: 35px;
+						&:hover {
+							opacity: .8;
+						}
+					}
+					.vk a {
+						@include sprite($vk);
+					}
+					.fb a {
+						@include sprite($fb);
+					}
+					.inst a {
+						@include sprite($inst);
+					}
+					.gplus a {
+						@include sprite($gplus);
+					}
+				}
+			}
+			&.bonuses {
+				background-color: #ffb400;
+				border-radius: 15px;
+				box-shadow: 0 2px 0 #ff9600;
+				padding: 15px 15px 10px 15px;
+				position: relative;
+				transition: all .3s ease-in-out;
+				&:hover {
+					background-color: #eaa705;
+				}
+				.heading {
+					font-size: 15px;
+					font-family: 'bsansbold';
+					margin: 0;
+					color: #fff;
+				}
+				.number {
+					font-size: 24px;
+					display: block;
+					color: #fff;
+					font-family: 'bsanslight';
+					padding: 15px 0;
+					border-bottom: 1px solid #fff;
+				}
+				.view-more {
+					display: block;
+					color: #fff;
+					text-decoration: none;
+					font-family: 'bsanslight';
+					text-transform: uppercase;
+					margin-top: 10px;
+					text-align: center;
+				}
+				.bg {
+					background: url(../img/bonus-bg.png) center center no-repeat;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+				}
+			}
+			&.my-cart {
+				position: relative;
+				background-color: #ff738d;
+				border-radius: 15px;
+				box-shadow: 0 2px 0 #e94b68;
+				padding: 15px;
+				transition: all .3s ease-in-out;
+				&:hover {
+					background-color: #ee6c84;
+				}
+				.bg {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					left: 0;
+					top: 0;
+					background: url(../img/cart-bg.png) center center no-repeat;
+				}
+				.heading {
+					font-size: 15px;
+					font-family: 'bsansbold';
+					color: #fff;
+					text-align: center;
+					margin: 0 0 10px;
+				}
+				span {
+					display: block;
+					margin-bottom: 5px;
+					color: #fff;
+					font-size: 14px;
+
+				}
+			}
+		}
+	}
+}
+
+//SEARCH ROW
+
+.search-row {
+	.selectric-search-select {
+		width: 220px;
+		float: left;
+	}
+	.selectric {
+		background-color: #ffb400;
+		border-radius: 20px 5px 5px 20px;
+		box-shadow: 2px 0 0 #ff9600;
+		height: 40px;
+		border: none;
+		padding-left: 40px;
+		transition: all .3s ease-in-out;
+		
+		&:hover {
+			background-color: #e7a506;
+		}
+		.label {
+			color: #fff;
+			font-size: 19px;
+			margin: 0;
+			line-height: 43px;
+		}
+		.button {
+			font-size: 0px;
+			@include sprite($select-arr);
+			line-height: 0;
+			left: 15px;
+			right: auto;
+			top: 50%;
+			transform: translateY(-50%);
+			&::after {
+				display: none;
+			}
+		}
+	}
+	.selectric-items {
+		border: none;
+		left: 2px;
+	}
+	.selectric-items li {
+		background: #ffb400;
+		border-bottom: 1px solid #fff;
+		color: #fff;
+		font-size: 15px;
+		&:hover {
+			background-color: #e7a506;
+		}
+	}
+	.search-input {
+		height: 40px;
+		display: inline-block;
+		border: none;
+		outline: none;
+		padding-left: 70px;
+		background: url(../img/search.png) left 28px center no-repeat #fff;
+		border-top-right-radius: 20px;
+		border-bottom-right-radius: 20px;
+		width: calc(100% - 460px);
+	}
+	.search-btn {
+		display: block;
+		float: right;
+		width: 220px;
+		height: 40px;
+		background-color: #00a4df;
+		border-radius: 20px;
+		box-shadow: 0 2px 0 #1180a8;
+		transition: all .3s ease-in-out;
+		outline: none;
+		border: none;
+		font-size: 19px;
+		font-family: 'bsansbold';
+		color: #fff;
+		text-transform: uppercase;
+		line-height: 42px;
+		&:hover {
+			background-color: #0698cd;
+		}
+	}
+}
+
+//CAT ROW
+.cat-row {
+	padding: 30px 0 40px;
+	&__buttons {
+		width: 220px;
+		float: left;
+	}
+	&__button {
+		display: block;
+		height: 40px;
+		border-radius: 20px;
+		transition: all .3s ease-in-out;
+		background: #fff;
+		color: #48cfff;
+		font-size: 19px;
+		text-decoration: none;
+		text-align: center;
+		line-height: 42px;
+		margin-bottom: 10px;
+		&:hover, &.active {
+			background: #ff738d;
+			box-shadow: 0 2px 0 #e94b68;
+			color: #fff;
+		}
+	}
+	&__list {
+		margin: 0 0 0 270px;
+		padding: 0;
+		list-style-type: none;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		& > li {
+			// overflow: hidden;
+			min-height: 96px;
+			position: relative;
+			width: 100px;
+			box-shadow: 0 2px 0 #dad9d9;
+			background: #fff;
+			border-radius: 15px;
+			text-align: center;
+			& div > a {
+				color: $linkColor;
+				font-size: 13px;
+				display: block;
+				text-align: center;
+				padding: 10px 0;
+				
+				text-decoration: none;
+				font-family: 'PT Sans';
+				line-height: 13px;
+			}
+			&.menu-item-has-children div > a {
+				border-bottom: 1px solid #fff;
+			}
+			.sub-menu {
+				padding: 0 10px;
+				margin: 0;
+				list-style-type: none;
+				text-align: left;
+				li {
+					margin-top: 7px;
+				}
+				a {
+					font-size: 12px;
+					color: #fff;
+					text-decoration: underline;
+					font-family: 'PT Sans';
+					font-weight: 400;
+					display: block;
+					&:hover {
+						color: $linkColor;
+					}
+				}
+			}
+			&.menu-item-has-children:hover {
+				overflow: visible;
+			}
+			&:hover div {
+				background: #00a4df;
+				box-shadow: 0 2px 0 #1180a8;
+				max-height: 999px;
+				
+				& > a {
+					color: #fff;
+					font-weight: 700;
+				}
+			}
+			&.menu-item-has-children:hover div {
+				height: auto;
+			}
+		}
+		div {
+			position: absolute;
+			width: 100%;
+			max-height: 105px;
+			overflow: hidden;
+			height: 100%;
+			top: 0;
+			left: 0;
+			padding: 45px 5px 5px;
+			border-radius: 15px;
+			transition: all .3s ease-in-out;
+			text-align: center;
+			z-index: 9;
+		}
+		i {
+			display: inline-block;
+			position: relative;
+			z-index: 10;
+			margin-top: 8px;
+		}
+		.podguznik i {
+			@include sprite($podguznik);
+		}
+		.podguznik:hover i {
+			@include sprite($podguznik-hover);
+		}
+		.gloryes i {
+			@include sprite($gloryes);
+		}
+		.detskoe-pitanie i {
+			@include sprite($pitanie);
+		}
+		.detskoe-pitanie:hover i {
+			@include sprite($pitanie-hover);
+		}
+		.aksesuari i {
+			@include sprite($aksesuari);
+		}
+		.aksesuari:hover i {
+			@include sprite($aksesuari-hover);
+		}
+		.gigiena i {
+			@include sprite($gigiena);
+		}
+		.gigiena:hover i {
+			@include sprite($gigiena-hover);
+		}
+		.ximia i {
+			@include sprite($ximia);
+		}
+		.ximia:hover i {
+			@include sprite($ximia-hover);
+		}
+		.odejda i {
+			@include sprite($odejda);
+		}
+		.odejda:hover i {
+			@include sprite($odejda-hover);
+		}
+		.pustishka i {
+			@include sprite($pustishka);
+		}
+		.pustishka:hover i {
+			@include sprite($pustishka-hover);
+		}
+	}
+}
+
+//INDEX PAGE
+
+// DISCOUNT ROW
+
+.discount-row {
+	display: flex;
+	flex-flow: row nowrap;
+	&__slider {
+		width: 70%;
+		img {
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
+		.swiper-container {
+			border-radius: 15px;
+		}
+	}
+	&__img {
+		margin-left: 3%;
+		width: 27%;
+		height: 500px;
+		background: red;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

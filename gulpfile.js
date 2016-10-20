@@ -45,22 +45,21 @@ gulp.task('styles', function() {
 		}))
 		.pipe(sourcemaps.init())
 		.pipe(sass())
-		.pipe(sourcemaps.write())
 		.pipe(autoprefixer({
 			browsers: ['last 5 versions', 'ie 8', 'ie 9', '> 1%'],
 			cascade: false
 		}))
-		.pipe(gulp.dest('public/css/'))
 		.pipe(rename({
 			suffix: '.min'
 		}))
 		.pipe(cssnano())
-		.pipe(sourcemaps.write())
+		.pipe(sourcemaps.write('/maps'))
 		.pipe(gulp.dest('public/css/'))
 		.pipe(browserSync.reload({
 			stream: true
 		}));
 });
+
 
 // --------------------------------------------
 //  Task: compile Jade to HTML
@@ -203,7 +202,7 @@ gulp.task('watch', function() {
 
 gulp.task('build', gulp.series(
 	'clean',
-	gulp.parallel('styles', 'jade', 'scripts', 'fonts', 'sprites', 'images')));
+	gulp.parallel('styles', 'jade', 'scripts', 'fonts', 'sprites', 'images', 'libScripts')));
 
 // --------------------------------------------
 //  Task: Basic server
