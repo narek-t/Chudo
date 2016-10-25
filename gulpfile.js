@@ -55,9 +55,7 @@ gulp.task('styles', function() {
 		.pipe(cssnano())
 		.pipe(sourcemaps.write('/maps'))
 		.pipe(gulp.dest('public/css/'))
-		.pipe(browserSync.reload({
-			stream: true
-		}));
+		.pipe(browserSync.stream());
 });
 
 

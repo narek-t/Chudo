@@ -8,30 +8,33 @@ SCSS variables are information about icon's compiled state, stored under its ori
 The large array-like variables contain all information about a single icon
 $icon-home: x y offset_x offset_y width height total_width total_height image_path;
 */
-$aksesuari-hover: 143px 78px -143px -78px 31px 42px 216px 172px '../img/sprite.png';
-$aksesuari: 0px 130px 0px -130px 31px 42px 216px 172px '../img/sprite.png';
-$fb: 115px 130px -115px -130px 31px 32px 216px 172px '../img/sprite.png';
-$gigiena-hover: 0px 46px 0px -46px 40px 40px 216px 172px '../img/sprite.png';
-$gigiena: 44px 46px -44px -46px 40px 40px 216px 172px '../img/sprite.png';
-$gloryes: 92px 0px -92px 0px 47px 33px 216px 172px '../img/sprite.png';
-$gplus: 150px 130px -150px -130px 31px 31px 216px 172px '../img/sprite.png';
-$heart: 185px 108px -185px -108px 16px 14px 216px 172px '../img/sprite.png';
-$home: 185px 89px -185px -89px 17px 15px 216px 172px '../img/sprite.png';
-$inst: 185px 0px -185px 0px 31px 31px 216px 172px '../img/sprite.png';
-$odejda-hover: 0px 90px 0px -90px 40px 36px 216px 172px '../img/sprite.png';
-$odejda: 92px 37px -92px -37px 40px 36px 216px 172px '../img/sprite.png';
-$phone: 185px 70px -185px -70px 20px 15px 216px 172px '../img/sprite.png';
-$pitanie-hover: 143px 39px -143px -39px 38px 35px 216px 172px '../img/sprite.png';
-$pitanie: 143px 0px -143px 0px 38px 35px 216px 172px '../img/sprite.png';
-$podguznik-hover: 44px 90px -44px -90px 42px 32px 216px 172px '../img/sprite.png';
-$podguznik: 90px 90px -90px -90px 42px 32px 216px 172px '../img/sprite.png';
-$pustishka-hover: 75px 130px -75px -130px 36px 36px 216px 172px '../img/sprite.png';
-$pustishka: 35px 130px -35px -130px 36px 36px 216px 172px '../img/sprite.png';
-$select-arr: 185px 145px -185px -145px 14px 9px 216px 172px '../img/sprite.png';
-$user: 185px 126px -185px -126px 14px 15px 216px 172px '../img/sprite.png';
-$vk: 185px 35px -185px -35px 30px 31px 216px 172px '../img/sprite.png';
-$ximia-hover: 46px 0px -46px 0px 42px 42px 216px 172px '../img/sprite.png';
-$ximia: 0px 0px 0px 0px 42px 42px 216px 172px '../img/sprite.png';
+$aksesuari-hover: 143px 78px -143px -78px 31px 42px 216px 193px '../img/sprite.png';
+$aksesuari: 0px 130px 0px -130px 31px 42px 216px 193px '../img/sprite.png';
+$basket: 185px 70px -185px -70px 23px 23px 216px 193px '../img/sprite.png';
+$fb: 115px 130px -115px -130px 31px 32px 216px 193px '../img/sprite.png';
+$gigiena-hover: 0px 46px 0px -46px 40px 40px 216px 193px '../img/sprite.png';
+$gigiena: 44px 46px -44px -46px 40px 40px 216px 193px '../img/sprite.png';
+$gloryes: 92px 0px -92px 0px 47px 33px 216px 193px '../img/sprite.png';
+$gplus: 185px 0px -185px 0px 31px 31px 216px 193px '../img/sprite.png';
+$heart: 185px 135px -185px -135px 16px 14px 216px 193px '../img/sprite.png';
+$home: 185px 116px -185px -116px 17px 15px 216px 193px '../img/sprite.png';
+$horiz-arr-next: 0px 176px 0px -176px 10px 17px 216px 193px '../img/sprite.png';
+$horiz-arr-prev: 14px 176px -14px -176px 10px 17px 216px 193px '../img/sprite.png';
+$inst: 150px 130px -150px -130px 31px 31px 216px 193px '../img/sprite.png';
+$odejda-hover: 0px 90px 0px -90px 40px 36px 216px 193px '../img/sprite.png';
+$odejda: 92px 37px -92px -37px 40px 36px 216px 193px '../img/sprite.png';
+$phone: 185px 97px -185px -97px 20px 15px 216px 193px '../img/sprite.png';
+$pitanie-hover: 143px 39px -143px -39px 38px 35px 216px 193px '../img/sprite.png';
+$pitanie: 143px 0px -143px 0px 38px 35px 216px 193px '../img/sprite.png';
+$podguznik-hover: 90px 90px -90px -90px 42px 32px 216px 193px '../img/sprite.png';
+$podguznik: 44px 90px -44px -90px 42px 32px 216px 193px '../img/sprite.png';
+$pustishka-hover: 35px 130px -35px -130px 36px 36px 216px 193px '../img/sprite.png';
+$pustishka: 75px 130px -75px -130px 36px 36px 216px 193px '../img/sprite.png';
+$select-arr: 92px 77px -92px -77px 14px 9px 216px 193px '../img/sprite.png';
+$user: 185px 153px -185px -153px 14px 15px 216px 193px '../img/sprite.png';
+$vk: 185px 35px -185px -35px 30px 31px 216px 193px '../img/sprite.png';
+$ximia-hover: 46px 0px -46px 0px 42px 42px 216px 193px '../img/sprite.png';
+$ximia: 0px 0px 0px 0px 42px 42px 216px 193px '../img/sprite.png';
 
 /*
 The provided mixins are intended to be used with the array-like variables
