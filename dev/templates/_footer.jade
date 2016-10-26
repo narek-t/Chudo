@@ -1,3 +1,94 @@
 block footer
-
 	footer.site-footer
+		.container
+			.site-footer__inner
+				.site-footer__inner-col.logo
+					a(href="#")
+						img(src="img/footer-logo.png", alt="")
+				.site-footer__inner-col.footer-nav
+					ul
+						li.current-menu-item
+							a(href="#") Главная
+						li
+							a(href="#") Клуб покупателей
+						li
+							a(href="#") Это интересно
+						li
+							a(href="#") Доставка
+						li
+							a(href="#") Контакты
+						li
+							a(href="#") О Берегите чудо
+				.site-footer__inner-col.subscribe-col
+					.phones
+						a(href="tel:(3452) 541-001") (3452) 541-001
+						a(href="tel:") 8-800-321-45-90
+					a.subscribe(href="#") Подписаться на рассылку
+				.site-footer__inner-col.social-col
+					p.heading Мы в социальных сетях:
+					ul
+						li.vk
+							a(href="#")
+						li.inst
+							a(href="#")
+						li.fb
+							a(href="#")
+						li.gplus
+							a(href="#")
+		.copyright.container
+			p ООО «ИМ-Сервис» - интернет-магазин товаров для мам и малышей в Тюмени Наш адрес: г.Тюмень, ул.Котовского, д.1 Тел.: 
+				a(href="tel:+7 (3452) 54-10-01") +7 (3452) 54-10-01, 
+				| e-mail: 
+				a(href="mailto:info@beregitechudo.ru") info@beregitechudo.ru
+				| <br>Предложение не является публичной офертой. Цены в каталоге могут отличаться от действующих цен, о чем в момент подтверждения заказа продавец обязан уведомить покупателя.<br>Сроки годности товара и гарантийные сроки также доводятся до сведения покупателя в момент подтверждения заказа.<br>Все товары сертифицированы и по желанию покупателя сертификаты могут быть предъявлены в момент передачи заказа.
+#callback.popup.zoom-anim-dialog.mfp-hide
+	p.heading Обратный звонок
+	form
+		.popup__inner
+			.popup__inner-row
+				p Как к вам обращаться
+					span.required *
+				input(type="text" placeholder="Введите ваше Имя")
+			.popup__inner-row
+				p Ваш номер телефона
+					span.required *
+				input(type="tel" placeholder="+7 (___) ___-__-__")
+			.popup__inner-row
+				p Тема беседы
+				input(type="password" placeholder="Введите пароль")
+			.popup__inner-row
+				p Код с картинки
+					span.required *
+				img(src="img/captcha.png", alt="")
+				input.captcha-code(type="text" placeholder="Код")
+		input(type="submit" value="позвонить мне")
+
+#login.popup.zoom-anim-dialog.mfp-hide
+	p.heading Авторизация
+	form
+		.popup__inner
+			.popup__inner-row
+				p Эл. почта
+					span.required *
+				input(type="email" placeholder="Введите E-mail")
+			.popup__inner-row
+				p Пароль
+					span.required *
+				input(type="password" placeholder="Введите пароль")
+		input(type="submit" value="войти")
+	p Еще не зарегистрированы?
+		a(href="#") Регистрация
+
+
+
+
+
+
+
+
+
+
+
+
+
+

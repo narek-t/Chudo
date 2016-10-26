@@ -15,9 +15,9 @@ block header
 					a(href="tel:(3452) 541-001") (3452) 541-001
 				.login-register
 					i.user
-					a(href="#") Войти
+					a.open-popup(href="#login") Войти
 					span |
-					a(href="#") Регистрация
+					a.open-popup(href="#login") Регистрация
 		.top-nav-wrapper
 			.container
 				button.toggle-mobile-nav
@@ -40,7 +40,7 @@ block header
 					a(href="#")
 						img(src="img/logo.png", alt="Logo")
 				.cart-side
-					a.cart-side__item.callback(href="#") Заказать обратный звонок
+					a.cart-side__item.callback.open-popup(href="#callback") Заказать обратный звонок
 						span
 					.cart-side__item.social
 						p.heading Мы в социальных сетях
@@ -84,7 +84,7 @@ block header
 				.cat-row__buttons
 					a.cat-row__button.active(href="#") Товары для детей
 					a.cat-row__button(href="#") Товары для мам
-				ul.cat-row__list
+				ul.cat-row__list.active
 					li.menu-item-has-children.podguznik
 						i
 						div
@@ -153,28 +153,31 @@ block header
 								li
 									a(href="#") Теплые куртки теплее
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+				ul.cat-row__list.mom__list
+					li.menu-item-has-children.berem
+						i
+						div
+							a(href="#") Бельё для беременных и кормящих
+							ul.sub-menu
+								li
+									a(href="#") Подгузники
+								li
+									a(href="#") Трусики
+								li
+									a(href="#") Для купания
+					li.aksesuar
+						i
+						div
+							a(href="#") Аксессуары для кормления
+					li.menu-item-has-children.laktacia
+						i
+						div
+							a(href="#")  Продукты для лактации
+							ul.sub-menu
+								li
+									a(href="#") Каши
+								li
+									a(href="#") Шашлыки
+								li
+									a(href="#") Другое
+					

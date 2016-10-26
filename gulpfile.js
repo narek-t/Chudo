@@ -43,7 +43,7 @@ gulp.task('styles', function() {
 		.pipe(plumber({
 			errorHandler: onError
 		}))
-		.pipe(sourcemaps.init())
+		// .pipe(sourcemaps.init())
 		.pipe(sass())
 		.pipe(autoprefixer({
 			browsers: ['last 5 versions', 'ie 8', 'ie 9', '> 1%'],
@@ -53,9 +53,11 @@ gulp.task('styles', function() {
 			suffix: '.min'
 		}))
 		.pipe(cssnano())
-		.pipe(sourcemaps.write('/maps'))
+		// .pipe(sourcemaps.write('/maps'))
 		.pipe(gulp.dest('public/css/'))
-		.pipe(browserSync.stream());
+		.pipe(browserSync.reload({
+			stream: true
+		}));
 });
 
 

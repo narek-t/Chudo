@@ -27,4 +27,25 @@ $(document).ready(function() {
 	    nextButton: ".hot-next",
 	    prevButton: ".hot-prev",
 	});
+	$(".cat-row__buttons a").click(function(event) {
+		event.preventDefault();
+		var index = $(this).index();
+		$(".cat-row__buttons a").removeClass('active');
+		$(this).addClass('active');
+		$("ul.cat-row__list").removeClass('active');
+		$("ul.cat-row__list").eq(index).addClass('active');
+	});
+
+	$('.open-popup').magnificPopup({
+      type: 'inline',
+      fixedContentPos: true,
+      fixedBgPos: true,
+      overflowY: 'auto',
+      closeBtnInside: true,
+      preloader: false,
+      midClick: true,
+      removalDelay: 300,
+      mainClass: 'my-mfp-slide-bottom'
+    });
+    $('input[type=tel]').inputmask("+7 (999) 999-99-99");
 });
