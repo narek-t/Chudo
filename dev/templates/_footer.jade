@@ -78,6 +78,27 @@ block footer
 		input(type="submit" value="войти")
 	p Еще не зарегистрированы?
 		a(href="#") Регистрация
+#receive.popup.zoom-anim-dialog.mfp-hide
+	p.heading ПОлучить оптовый прайс
+	form
+		.popup__inner
+			.popup__inner-row
+				p Как к вам обращаться
+					span.required *
+				input(type="text" placeholder="Введите ваше Имя")
+			.popup__inner-row
+				p Ваш номер телефона
+					span.required *
+				input(type="tel" placeholder="+7 (___) ___-__-__")
+			.popup__inner-row
+				p Тема беседы
+				input(type="password" placeholder="Введите пароль")
+			.popup__inner-row
+				p Код с картинки
+					span.required *
+				img(src="img/captcha.png", alt="")
+				input.captcha-code(type="text" placeholder="Код")
+		input(type="submit" value="ПОлучить")
 
 
 

@@ -156,13 +156,66 @@
           </div>
         </div>
       </header>
-      <main class="main-content cf about">
+      <main class="main-content cf contacts">
         <div class="container">
           <div class="breadcrumbs">
             <div class="breadcrumbs__inner"><a href="#">Главная</a><span class="separator">></span><span>Контакты</span></div>
             <h2 class="page-title">Контакты</h2>
           </div>
-          <div class="single-content"></div>
+          <div class="single-content">
+            <div class="row">
+              <div class="col">
+                <p class="tel">Телефон службы доставки в Тюмени - <a href="tel:(3452) 541-001">(3452) 541-001</a></p>
+              </div>
+              <div class="col"><a href="#receive" class="receive btn open-popup">Получить оптовый прайс</a></div>
+            </div>
+            <h2>Магазины "Берегите Чудо" в Тюмени:</h2>
+            <div class="row">
+              <div class="col">
+                <p><strong>ул. Котовского, д.1.<br></strong>Часы работы: ежедневно, с 10.00 до 20.00.<br>
+                  телефон: (3452) 123-786.<br>
+                  Оплата: наличными, банковской картой через терминал.<br>
+                </p>
+              </div>
+              <div class="col">
+                <p><strong>ул. Котовского, д.1.<br></strong>Часы работы: ежедневно, с 10.00 до 20.00.<br>
+                  телефон: (3452) 123-786.<br>
+                  Оплата: наличными, банковской картой через терминал.<br>
+                </p>
+              </div>
+              <div class="col">
+                <p><strong>ул. Котовского, д.1.<br></strong>Часы работы: ежедневно, с 10.00 до 20.00.<br>
+                  телефон: (3452) 123-786.<br>
+                  Оплата: наличными, банковской картой через терминал.<br>
+                </p>
+              </div>
+              <div class="col">
+                <p><strong>ул. Котовского, д.1.<br></strong>Часы работы: ежедневно, с 10.00 до 20.00.<br>
+                  телефон: (3452) 123-786.<br>
+                  Оплата: наличными, банковской картой через терминал.<br>
+                </p>
+              </div>
+            </div>
+            <div id="map" class="map"></div>
+            <div class="contact-bottom social-col">
+              <p class="social-heading">Мы в социальных сетях:</p>
+              <ul>
+                <li class="vk"><a href="#"></a></li>
+                <li class="inst"><a href="#"></a></li>
+                <li class="fb"><a href="#"></a></li>
+                <li class="gplus"><a href="#"></a></li>
+              </ul>
+            </div>
+            <div class="row">
+              <div class="col">
+                <p><strong>По вопросам рекламы и маркетингового сотрудничества:<br></strong><a href="mailto:pr@beregitechudo.ru">pr@beregitechudo.ru</a></p>
+                <p><strong>По общим вопросам:<br></strong><a href="mailto:info@beregitechudo.ru">info@beregitechudo.ru</a><span>Этот адрес электронной почты защищен от спам-ботов.<br>У вас должен быть включен JavaScript для просмотра.</span></p>
+              </div>
+              <div class="col">
+                <p><strong>Юридическая информация:<br></strong>ООО "ИМ - Сервис"<br>ОГРН 1127232025832<br>Юр. адрес: г.Тюмень, ул. Котовского, д.1</p>
+              </div>
+            </div>
+          </div>
           <div class="page-description">
             <h3>Интернет-магазин детских товаров в Тюмени</h3>
             <p>Добро пожаловать на наш сайт!<br><br>Наверняка каждый родитель прекрасно осведомлен о том, насколько важно обеспечить своего малыша самыми необходимыми вещами. На сегодняшний момент существует масса разнообразных новинок для малышей, которые сделают комфортной жизнь не только ребенка, но и мамочки. Мы предлагаем детские товары самых различных категорий:</p>
@@ -243,7 +296,32 @@
       </form>
       <p>Еще не зарегистрированы?<a href="#">Регистрация</a></p>
     </div>
+    <div id="receive" class="popup zoom-anim-dialog mfp-hide">
+      <p class="heading">ПОлучить оптовый прайс</p>
+      <form>
+        <div class="popup__inner">
+          <div class="popup__inner-row">
+            <p>Как к вам обращаться<span class="required">*</span></p>
+            <input type="text" placeholder="Введите ваше Имя"/>
+          </div>
+          <div class="popup__inner-row">
+            <p>Ваш номер телефона<span class="required">*</span></p>
+            <input type="tel" placeholder="+7 (___) ___-__-__"/>
+          </div>
+          <div class="popup__inner-row">
+            <p>Тема беседы</p>
+            <input type="password" placeholder="Введите пароль"/>
+          </div>
+          <div class="popup__inner-row">
+            <p>Код с картинки<span class="required">*</span></p><img src="img/captcha.png" alt=""/>
+            <input type="text" placeholder="Код" class="captcha-code"/>
+          </div>
+        </div>
+        <input type="submit" value="ПОлучить"/>
+      </form>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <script src="js/lib/lib.min.js"></script>
     <script src="js/main.min.js"></script>
   </body>

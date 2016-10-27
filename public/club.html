@@ -274,7 +274,32 @@
       </form>
       <p>Еще не зарегистрированы?<a href="#">Регистрация</a></p>
     </div>
+    <div id="receive" class="popup zoom-anim-dialog mfp-hide">
+      <p class="heading">ПОлучить оптовый прайс</p>
+      <form>
+        <div class="popup__inner">
+          <div class="popup__inner-row">
+            <p>Как к вам обращаться<span class="required">*</span></p>
+            <input type="text" placeholder="Введите ваше Имя"/>
+          </div>
+          <div class="popup__inner-row">
+            <p>Ваш номер телефона<span class="required">*</span></p>
+            <input type="tel" placeholder="+7 (___) ___-__-__"/>
+          </div>
+          <div class="popup__inner-row">
+            <p>Тема беседы</p>
+            <input type="password" placeholder="Введите пароль"/>
+          </div>
+          <div class="popup__inner-row">
+            <p>Код с картинки<span class="required">*</span></p><img src="img/captcha.png" alt=""/>
+            <input type="text" placeholder="Код" class="captcha-code"/>
+          </div>
+        </div>
+        <input type="submit" value="ПОлучить"/>
+      </form>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <script src="js/lib/lib.min.js"></script>
     <script src="js/main.min.js"></script>
   </body>
