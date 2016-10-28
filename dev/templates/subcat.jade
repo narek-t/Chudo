@@ -1,0 +1,361 @@
+extends _layout
+block content
+	main.main-content.cf
+		.container
+			.breadcrumbs
+				.breadcrumbs__inner
+					a(href="#") Главная
+					span.separator >
+					a(href="#") Подгузники
+					span.separator >
+					span Подгузники
+				h2.page-title Подгузники
+			.cat__content.cf
+				aside.filter
+					.filter__block
+						p.heading Категория
+						input(type="radio" id="cat1" name="cat")
+						label(for="cat1") Подгузники
+						input(type="radio" id="cat2" name="cat")
+						label(for="cat2") Трусики
+						input(type="radio" id="cat3" name="cat")
+						label(for="cat3") Для купания
+					.filter__block
+						p.heading Производитель
+						input(type="checkbox" id="prod1")
+						label(for="prod1") Pampers
+						input(type="checkbox" id="prod2")
+						label(for="prod2") Huggies
+						input(type="checkbox" id="prod3")
+						label(for="prod3") Libero
+						input(type="checkbox" id="prod4")
+						label(for="prod4") Goon
+						input(type="checkbox" id="prod5")
+						label(for="prod5") Maneki (Манеки)
+						input(type="checkbox" id="prod6")
+						label(for="prod6") Merries
+						input(type="checkbox" id="prod7")
+						label(for="prod7") Milly Tilly
+						input(type="checkbox" id="prod8")
+						label(for="prod8") Moony
+					.filter__block
+						p.heading Пол
+						input(type="checkbox" id="sex1")
+						label(for="sex1") Подгузники
+						input(type="checkbox" id="sex2")
+						label(for="sex2") Трусики
+					.filter__block
+						p.heading Возраст
+						.select-wr
+							p от
+							select.filter-select
+								option(value="1") Любой
+								option(value="1") 10
+								option(value="1") 20
+								option(value="1") 30
+						.select-wr
+							p до
+							select.filter-select
+								option(value="1") Любой
+								option(value="1") 10
+								option(value="1") 20
+								option(value="1") 30
+					.filter__block
+						p.heading Размер
+						ul.sizes
+							li
+								input(type="checkbox" id="size1")
+								label(for="size1") 1
+							li
+								input(type="checkbox" id="size2")
+								label(for="size1") 2
+							li
+								input(type="checkbox" id="size3")
+								label(for="size1") 3
+							li
+								input(type="checkbox" id="size4")
+								label(for="size1") 4
+							li
+								input(type="checkbox" id="size5")
+								label(for="size1") 5
+							li
+								input(type="checkbox" id="size7")
+								label(for="size1") 7
+							li
+								input(type="checkbox" id="sizes")
+								label(for="sizes") S
+							li
+								input(type="checkbox" id="sizem")
+								label(for="sizem") M
+							li
+								input(type="checkbox" id="sizel")
+								label(for="sizel") L
+							li
+								input(type="checkbox" id="sizexl")
+								label(for="sizexl") XL
+					.filter__block
+						p.heading Количество, шт.
+						input(type="radio" id="val1")
+						label(for="val1") до 20
+						input(type="radio" id="val2")
+						label(for="val2") 21-50
+						input(type="radio" id="val3")
+						label(for="val3") 51-100
+						input(type="radio" id="val4")
+						label(for="val4") 101-200
+						input(type="radio" id="val5")
+						label(for="val5") от 200
+					input.btn(type="submit" value="Подобрать")
+				.cat__content-inner
+					.horiz-row
+						.swiper-slide
+							.img-wrap
+								a(href="#")
+									img(src="img/rec1.jpg", alt="")
+							.title 
+								a(href="#") Подгузники Huggies Ultra Comfort для девочек 5 (12-22 кг)
+							.price
+								span.old-price 1799 руб.
+								| 1620 руб.
+							a.buy(href="#") Купить
+								span.basket
+							.discount-notify Скидка
+								span.discount-size 25%
+						.swiper-slide
+							.img-wrap
+								a(href="#")
+									img(src="img/rec2.jpg", alt="")
+							.title 
+								a(href="#") Подгузники Libero Comfort 4 (7-14 кг) 120 шт.
+							.price
+								| 1620 руб.
+							a.buy(href="#") Купить
+								span.basket
+						.swiper-slide
+							.img-wrap
+								a(href="#")
+									img(src="img/rec1.jpg", alt="")
+							.title 
+								a(href="#") Подгузники Huggies Ultra Comfort для девочек 5 (12-22 кг)
+							.price
+								span.old-price 1799 руб.
+								| 1620 руб.
+							a.buy(href="#") Купить
+								span.basket
+							.discount-notify Скидка
+								span.discount-size 10%
+						.swiper-slide
+							.img-wrap
+								a(href="#")
+									img(src="img/rec2.jpg", alt="")
+							.title 
+								a(href="#") Подгузники Libero Comfort 4 (7-14 кг) 120 шт.
+							.price
+								| 1620 руб.
+							a.buy(href="#") Купить
+								span.basket
+						.swiper-slide
+							.img-wrap
+								a(href="#")
+									img(src="img/rec1.jpg", alt="")
+							.title 
+								a(href="#") Подгузники Huggies Ultra Comfort для девочек 5 (12-22 кг)
+							.price
+								| 1620 руб.
+							a.buy(href="#") Купить
+								span.basket
+						.swiper-slide
+							.img-wrap
+								a(href="#")
+									img(src="img/rec1.jpg", alt="")
+							.title 
+								a(href="#") Подгузники Huggies Ultra Comfort для девочек 5 (12-22 кг)
+							.price
+								span.old-price 1799 руб.
+								| 1620 руб.
+							a.buy(href="#") Купить
+								span.basket
+							.discount-notify Скидка
+								span.discount-size 25%
+						.swiper-slide
+							.img-wrap
+								a(href="#")
+									img(src="img/rec2.jpg", alt="")
+							.title 
+								a(href="#") Подгузники Libero Comfort 4 (7-14 кг) 120 шт.
+							.price
+								| 1620 руб.
+							a.buy(href="#") Купить
+								span.basket
+						.swiper-slide
+							.img-wrap
+								a(href="#")
+									img(src="img/rec1.jpg", alt="")
+							.title 
+								a(href="#") Подгузники Huggies Ultra Comfort для девочек 5 (12-22 кг)
+							.price
+								span.old-price 1799 руб.
+								| 1620 руб.
+							a.buy(href="#") Купить
+								span.basket
+							.discount-notify Скидка
+								span.discount-size 10%
+						.swiper-slide
+							.img-wrap
+								a(href="#")
+									img(src="img/rec2.jpg", alt="")
+							.title 
+								a(href="#") Подгузники Libero Comfort 4 (7-14 кг) 120 шт.
+							.price
+								| 1620 руб.
+							a.buy(href="#") Купить
+								span.basket
+						.swiper-slide
+							.img-wrap
+								a(href="#")
+									img(src="img/rec1.jpg", alt="")
+							.title 
+								a(href="#") Подгузники Huggies Ultra Comfort для девочек 5 (12-22 кг)
+							.price
+								| 1620 руб.
+							a.buy(href="#") Купить
+								span.basket
+						.swiper-slide
+							.img-wrap
+								a(href="#")
+									img(src="img/rec1.jpg", alt="")
+							.title 
+								a(href="#") Подгузники Huggies Ultra Comfort для девочек 5 (12-22 кг)
+							.price
+								span.old-price 1799 руб.
+								| 1620 руб.
+							a.buy(href="#") Купить
+								span.basket
+							.discount-notify Скидка
+								span.discount-size 25%
+						.swiper-slide
+							.img-wrap
+								a(href="#")
+									img(src="img/rec2.jpg", alt="")
+							.title 
+								a(href="#") Подгузники Libero Comfort 4 (7-14 кг) 120 шт.
+							.price
+								| 1620 руб.
+							a.buy(href="#") Купить
+								span.basket
+						.swiper-slide
+							.img-wrap
+								a(href="#")
+									img(src="img/rec1.jpg", alt="")
+							.title 
+								a(href="#") Подгузники Huggies Ultra Comfort для девочек 5 (12-22 кг)
+							.price
+								span.old-price 1799 руб.
+								| 1620 руб.
+							a.buy(href="#") Купить
+								span.basket
+							.discount-notify Скидка
+								span.discount-size 10%
+						.swiper-slide
+							.img-wrap
+								a(href="#")
+									img(src="img/rec2.jpg", alt="")
+							.title 
+								a(href="#") Подгузники Libero Comfort 4 (7-14 кг) 120 шт.
+							.price
+								| 1620 руб.
+							a.buy(href="#") Купить
+								span.basket
+						.swiper-slide
+							.img-wrap
+								a(href="#")
+									img(src="img/rec1.jpg", alt="")
+							.title 
+								a(href="#") Подгузники Huggies Ultra Comfort для девочек 5 (12-22 кг)
+							.price
+								| 1620 руб.
+							a.buy(href="#") Купить
+								span.basket
+						.swiper-slide
+							.img-wrap
+								a(href="#")
+									img(src="img/rec1.jpg", alt="")
+							.title 
+								a(href="#") Подгузники Huggies Ultra Comfort для девочек 5 (12-22 кг)
+							.price
+								span.old-price 1799 руб.
+								| 1620 руб.
+							a.buy(href="#") Купить
+								span.basket
+							.discount-notify Скидка
+								span.discount-size 25%
+						.swiper-slide
+							.img-wrap
+								a(href="#")
+									img(src="img/rec2.jpg", alt="")
+							.title 
+								a(href="#") Подгузники Libero Comfort 4 (7-14 кг) 120 шт.
+							.price
+								| 1620 руб.
+							a.buy(href="#") Купить
+								span.basket
+						.swiper-slide
+							.img-wrap
+								a(href="#")
+									img(src="img/rec1.jpg", alt="")
+							.title 
+								a(href="#") Подгузники Huggies Ultra Comfort для девочек 5 (12-22 кг)
+							.price
+								span.old-price 1799 руб.
+								| 1620 руб.
+							a.buy(href="#") Купить
+								span.basket
+							.discount-notify Скидка
+								span.discount-size 10%
+						.swiper-slide
+							.img-wrap
+								a(href="#")
+									img(src="img/rec2.jpg", alt="")
+							.title 
+								a(href="#") Подгузники Libero Comfort 4 (7-14 кг) 120 шт.
+							.price
+								| 1620 руб.
+							a.buy(href="#") Купить
+								span.basket
+						.swiper-slide
+							.img-wrap
+								a(href="#")
+									img(src="img/rec1.jpg", alt="")
+							.title 
+								a(href="#") Подгузники Huggies Ultra Comfort для девочек 5 (12-22 кг)
+							.price
+								| 1620 руб.
+							a.buy(href="#") Купить
+								span.basket
+			.pagination-wrap
+				a.prev.pagination-arr(href="#") 
+					span < 
+					| Предедыщая
+				span 1
+				a(href="#") 2
+				a(href="#") 3
+				a(href="#") 4
+				a(href="#") 5
+				span ...
+				a(href="#") 21
+				a(href="#") 22
+				a(href="#") 23
+				a.next.pagination-arr(href="#") Следующая 
+					span >
+
+
+				
+
+			.page-description
+				h3 Интернет-магазин детских товаров в Тюмени
+				p Добро пожаловать на наш сайт!<br><br>Наверняка каждый родитель прекрасно осведомлен о том, насколько важно обеспечить своего малыша самыми необходимыми вещами. На сегодняшний момент существует масса разнообразных новинок для малышей, которые сделают комфортной жизнь не только ребенка, но и мамочки. Мы предлагаем детские товары самых различных категорий:
+
+
+
+
+block inlineScripts
