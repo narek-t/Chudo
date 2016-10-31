@@ -1,0 +1,44 @@
+extends _layout
+block content
+	main.main-content.cf.item-page
+		.container
+			.breadcrumbs
+				.breadcrumbs__inner
+				h2.page-title Личный кабинет
+			.lk-page.cf
+				aside.lk__menu
+					ul
+						li
+							a(href="#") Личные данные
+						li
+							a(href="#") Мои дети
+						li
+							a(href="#") История заказов
+						li
+							a(href="#") Избранное
+						li
+							a(href="#") Бонусная карта
+						li
+							a(href="#") Поменять пароль
+				.lk__content
+					.lk-tab
+					.lk-tab
+					.lk-tab
+					.lk-tab
+						p asd
+					.lk-tab
+					.lk-tab.change-pass.active
+						form
+							input.pass-inp(type="password" placeholder="Старый пароль")
+							input.pass-inp(type="password" placeholder="Новый пароль")
+							input.pass-inp(type="password" placeholder="Повторите пароль")
+							input#show-pass(type="checkbox")
+							label(for="show-pass") Показать вводимые знаки
+							input.btn(type="submit" value="Сменить пароль")
+
+
+
+
+
+
+block inlineScripts

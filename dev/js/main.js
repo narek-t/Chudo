@@ -147,9 +147,28 @@ $(document).ready(function() {
 
     $(".tabs-title a").click(function(event) {
     	event.preventDefault();
+    	var index = $(this).parents('li').index()
     	$(this).parents('.tabs-title').find('li').removeClass('active');
     	$(this).parents('li').addClass('active');
+    	$(".item-tabs__inner .item-tab").removeClass('active');
+    	$(".item-tabs__inner .item-tab").eq(index).addClass('active');
     });
+
+     $(".lk__menu a").click(function(event) {
+    	event.preventDefault();
+    	var index = $(this).parents('li').index();
+    	$(this).parents('.lk__menu').find('a').removeClass('active');
+    	$(this).addClass('active');
+    	$(".lk__content .lk-tab").removeClass('active');
+    	$(".lk__content .lk-tab").eq(index).addClass('active');
+    });
+     $("#show-pass").on('change', function(event) {
+     	if($("#show-pass").prop('checked')) {
+     		$(".change-pass .pass-inp").prop("type", "text");
+     	}else {
+     		$(".change-pass .pass-inp").prop("type", "password");
+     	}
+     });
 
     
 });
