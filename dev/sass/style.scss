@@ -4,6 +4,7 @@
 @import "_selectric.scss";
 @import "_swiper.min.scss";
 @import "_magnific-popup.scss";
+@import "_nouislider.min.scss";
 
 /* =WordPress Core
 -------------------------------------------------------------- */
@@ -2161,6 +2162,18 @@ html, body {
 				vertical-align: middle;
 			}
 		}
+		#range-slider {
+			margin-bottom: 15px;
+		}
+		.price-txt p {
+			margin: 0;
+			&:first-child {
+				float: left;
+			}
+			&:nth-child(2) {
+				float: right;
+			}
+		}
 	}
 	.horiz-row {
 		margin-left: 230px;
@@ -2173,6 +2186,36 @@ html, body {
 		margin-top: 25px;
 		margin-bottom: 25px;
 	}
+	.noUi-target {
+		border: none;
+		box-shadow: none;
+		background-color: #48cfff;
+		border-radius: 5px;
+		box-shadow: 0 1px 0 #1180a8;
+	}
+	.noUi-target {
+		height: 10px;
+	}
+	.noUi-connect {
+		background-color: #92de00;
+		border-radius: 5px;
+		box-shadow: 0 1px 0 #6ba301;
+	}
+	.noUi-handle:after, .noUi-handle:before {
+		display: none;
+	}
+	.noUi-handle {
+		width: 14px;
+		height: 14px;
+		background-color: #92de00;
+		border: 3px solid white;
+		box-shadow: 0 1px 0 rgba(85, 85, 85, 0.5);
+		border-radius: 50%;
+		left: -8px;
+		top: -2px;
+		cursor: pointer;
+	}
+
 }
 
 

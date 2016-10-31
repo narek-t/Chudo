@@ -80,5 +80,37 @@ $(document).ready(function() {
 	      })(marker, i));
 	    }
     }
+
+    var rangeSlider = document.getElementById('range-slider');
+	if(rangeSlider) {
+	  noUiSlider.create(rangeSlider, {
+	    start: [ 500, 5000 ],
+	    connect: true,
+	    step: 50,
+	    range: {
+	      'min': [ 500 ],
+	      'max': [ 5000 ]
+	    },
+	    format: wNumb({
+	      decimals: 0,
+	      thousand: ' ',
+	    })
+	  });
+
+	  var snapValues = [
+	    document.getElementById('range-slider-min'),
+	    document.getElementById('range-slider-max')
+	  ];
+	  var snapInputs = [
+	    document.getElementById('range_min'),
+	    document.getElementById('range_max')
+	  ];
+
+	  rangeSlider.noUiSlider.on('update', function( values, handle ) {
+
+	    snapValues[handle].innerHTML = values[handle];
+	    snapInputs[handle].value = values[handle];
+	  });
+	}
     
 });

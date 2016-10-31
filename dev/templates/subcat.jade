@@ -45,6 +45,16 @@ block content
 						input(type="checkbox" id="sex2")
 						label(for="sex2") Трусики
 					.filter__block
+						p.heading Стоимость, руб.
+						#range-slider
+						.price-txt.cf
+							p от  
+								span#range-slider-min
+							p до  
+								span#range-slider-max
+						input#range_min(type="hidden")
+						input#range_max(type="hidden")
+					.filter__block
 						p.heading Возраст
 						.select-wr
 							p от
