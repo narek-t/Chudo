@@ -159,83 +159,98 @@
       <main class="main-content cf item-page">
         <div class="container">
           <div class="breadcrumbs">
-            <div class="breadcrumbs__inner"></div>
-            <h2 class="page-title">Личный кабинет</h2>
+            <div class="breadcrumbs__inner"><a href="#">Главная</a><span class="separator">></span><span>Корзина</span></div>
+            <h2 class="page-title">Корзина</h2>
           </div>
-          <div class="lk-page cf">
-            <aside class="lk__menu">
-              <ul>
-                <li><a href="#">Личные данные</a></li>
-                <li><a href="#">Мои дети</a></li>
-                <li><a href="#">История заказов</a></li>
-                <li><a href="#" class="active">Избранное</a></li>
-                <li><a href="#">Бонусная карта</a></li>
-                <li><a href="#">Поменять пароль</a></li>
-              </ul>
-            </aside>
-            <div class="lk__content">
-              <div class="lk-tab"></div>
-              <div class="lk-tab"></div>
-              <div class="lk-tab"></div>
-              <div class="lk-tab fav-tab active">
-                <div class="horiz-row">
-                  <div class="swiper-slide">
-                    <div class="img-wrap"><a href="#"><img src="img/rec1.jpg" alt=""/></a></div>
-                    <div class="title"> <a href="#">Подгузники Huggies Ultra Comfort для девочек 5 (12-22 кг)</a></div>
-                    <div class="price"><span class="old-price">1799 руб.</span>1620 руб.</div><a href="#" class="buy">Купить<span class="basket"></span></a>
-                    <div class="discount-notify">Скидка<span class="discount-size">25%</span></div>
+          <div class="cart-inner order-page">
+            <div class="cart-inner__top">
+              <div class="presonal-data">
+                <p class="heading">Ваши контактные данные</p>
+                <div class="input-wrap">
+                  <label>Эл. потча<span class="req">*</span>
+                    <input type="text" placeholder="Ваш E-mail"/>
+                  </label>
+                  <label class="tel">Телефон<span class="req">*</span>
+                    <input type="tel" placeholder="+7 (___) ___-__-__"/>
+                  </label>
+                  <label class="name">Имя<span class="req">*</span>
+                    <input type="text" placeholder="Ваше имя"/>
+                  </label>
+                </div>
+              </div>
+              <div class="delivery-data">
+                <p class="heading">Адрес доставки</p>
+                <div class="input-wrap">
+                  <label class="city">Город<span class="req">*</span>
+                    <input type="text" placeholder="Ваш город"/>
+                  </label>
+                  <label class="street">Улица<span class="req">*</span>
+                    <input type="text" placeholder="Ваша улица"/>
+                  </label>
+                </div>
+                <div class="input-wrap">
+                  <label class="house">Дом<span class="req">*</span>
+                    <input type="text" placeholder="№ дома"/>
+                  </label>
+                  <label class="corpus">Корпус
+                    <input type="text" placeholder="№ корпуса"/>
+                  </label>
+                  <label class="str">Строение
+                    <input type="text" placeholder="№ строения"/>
+                  </label>
+                  <label class="office">Квартира/офис<span class="req">*</span>
+                    <input type="text" placeholder="№ квартиры/офиса"/>
+                  </label>
+                </div>
+                <div class="input-wrap">
+                  <label class="floor">Этаж
+                    <input type="text" placeholder="№ этажа"/>
+                  </label>
+                  <label class="porch">Подъезд
+                    <input type="text" placeholder="№ Подезда"/>
+                  </label>
+                </div>
+              </div>
+              <div class="payment-method">
+                <p class="heading">Способы оплаты</p>
+                <div class="payment-row">
+                  <div class="payment-col">
+                    <label>
+                      <input type="radio" name="method"/><span>Наличными курьеру</span>
+                    </label>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="img-wrap"><a href="#"><img src="img/rec2.jpg" alt=""/></a></div>
-                    <div class="title"> <a href="#">Подгузники Libero Comfort 4 (7-14 кг) 120 шт.</a></div>
-                    <div class="price">1620 руб.</div><a href="#" class="buy">Купить<span class="basket"></span></a>
+                  <div class="payment-col">
+                    <label>
+                      <input type="radio" name="method"/><span>Банковской картой курьеру</span>
+                    </label>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="img-wrap"><a href="#"><img src="img/rec1.jpg" alt=""/></a></div>
-                    <div class="title"> <a href="#">Подгузники Huggies Ultra Comfort для девочек 5 (12-22 кг)</a></div>
-                    <div class="price"><span class="old-price">1799 руб.</span>1620 руб.</div><a href="#" class="buy">Купить<span class="basket"></span></a>
-                    <div class="discount-notify">Скидка<span class="discount-size">10%</span></div>
+                  <div class="payment-col">
+                    <label>
+                      <input type="radio" name="method"/><span>Оплатить онлайн</span>
+                    </label>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="img-wrap"><a href="#"><img src="img/rec2.jpg" alt=""/></a></div>
-                    <div class="title"> <a href="#">Подгузники Libero Comfort 4 (7-14 кг) 120 шт.</a></div>
-                    <div class="price">1620 руб.</div><a href="#" class="buy">Купить<span class="basket"></span></a>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img-wrap"><a href="#"><img src="img/rec1.jpg" alt=""/></a></div>
-                    <div class="title"> <a href="#">Подгузники Huggies Ultra Comfort для девочек 5 (12-22 кг)</a></div>
-                    <div class="price">1620 руб.</div><a href="#" class="buy">Купить<span class="basket"></span></a>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img-wrap"><a href="#"><img src="img/rec1.jpg" alt=""/></a></div>
-                    <div class="title"> <a href="#">Подгузники Huggies Ultra Comfort для девочек 5 (12-22 кг)</a></div>
-                    <div class="price"><span class="old-price">1799 руб.</span>1620 руб.</div><a href="#" class="buy">Купить<span class="basket"></span></a>
-                    <div class="discount-notify">Скидка<span class="discount-size">25%</span></div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img-wrap"><a href="#"><img src="img/rec2.jpg" alt=""/></a></div>
-                    <div class="title"> <a href="#">Подгузники Libero Comfort 4 (7-14 кг) 120 шт.</a></div>
-                    <div class="price">1620 руб.</div><a href="#" class="buy">Купить<span class="basket"></span></a>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img-wrap"><a href="#"><img src="img/rec1.jpg" alt=""/></a></div>
-                    <div class="title"> <a href="#">Подгузники Huggies Ultra Comfort для девочек 5 (12-22 кг)</a></div>
-                    <div class="price"><span class="old-price">1799 руб.</span>1620 руб.</div><a href="#" class="buy">Купить<span class="basket"></span></a>
-                    <div class="discount-notify">Скидка<span class="discount-size">10%</span></div>
+                  <div class="payment-col bonuses-col">
+                    <p class="heading">Использовать бонусы</p>
+                    <input type="text" value="0"/><a href="#">Ваши бонусы</a>
                   </div>
                 </div>
               </div>
-              <div class="lk-tab"></div>
-              <div class="lk-tab change-pass">
-                <form>
-                  <input type="password" placeholder="Старый пароль" class="pass-inp"/>
-                  <input type="password" placeholder="Новый пароль" class="pass-inp"/>
-                  <input type="password" placeholder="Повторите пароль" class="pass-inp"/>
-                  <input id="show-pass" type="checkbox"/>
-                  <label for="show-pass">Показать вводимые знаки</label>
-                  <input type="submit" value="Сменить пароль" class="btn"/>
-                </form>
-              </div>
+            </div>
+            <div class="result-row">
+              <div class="result-row__inner">
+                <div class="calc-col">
+                  <div class="inner">
+                    <p class="heading">Итоговая стоимость:</p>
+                    <p><strong>8 820 руб. </strong>- стоимость товаров</p>
+                    <p><strong>0 руб. </strong>- стоимость доставки</p>
+                    <p><strong>0 руб. </strong>- скидка по промокоду</p>
+                  </div>
+                </div>
+                <div class="result-col">
+                  <p class="heading">Итоговая</p>
+                  <p class="summ">Сумма:<strong>8 820<span>руб.</span></strong></p>
+                </div>
+              </div><a href="#" class="btn continue">Оформить заказ</a><a href="#" class="back">вернуться назад</a>
             </div>
           </div>
         </div>

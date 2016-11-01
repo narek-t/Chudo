@@ -1,0 +1,141 @@
+extends _layout
+block content
+	main.main-content.cf.item-page
+		.container
+			.breadcrumbs
+				.breadcrumbs__inner
+					a(href="#") Главная
+					span.separator >
+					span Корзина
+				h2.page-title Корзина
+			.cart-inner
+				.cart-inner__top
+					p.heading Товары в вашей корзине
+					ul.cart-items
+						li
+							.cart-items__inner
+								.item-img.cart__items
+									.img-wrap
+										img(src="img/cart-img.png", alt="")
+								.item-heading.cart__items
+									p.table-heading Наименование товара
+									a(href="#") Подгузники Pampers Premium Care 1 (2-5 кг) 88 шт.
+								.item-price.cart__items
+									p.table-heading Цена за единицу
+									p.old-price 1 191 руб.
+									p.actual-price 980 руб.
+								.item-count.cart__items
+									p.table-heading Кооличество
+									.count-inner
+										span -
+										input(type="text" value="1")
+										span +
+								.item-all-price.cart__items
+									p.table-heading Общая стоимость
+									p.old-price 1 191 руб.
+									p.actual-price 980 руб.
+								.item-delete.cart__items
+									p.table-heading Удалить
+									a(href="#")
+										i.del-item
+						li
+							.cart-items__inner
+								.item-img.cart__items
+									.img-wrap
+										img(src="img/cart-img.png", alt="")
+								.item-heading.cart__items
+									p.table-heading Наименование товара
+									a(href="#") Подгузники Pampers Premium Care 1 (2-5 кг) 88 шт.
+								.item-price.cart__items
+									p.table-heading Цена за единицу
+									p.old-price 1 191 руб.
+									p.actual-price 980 руб.
+								.item-count.cart__items
+									p.table-heading Кооличество
+									.count-inner
+										span -
+										input(type="text" value="1")
+										span +
+								.item-all-price.cart__items
+									p.table-heading Общая стоимость
+									p.old-price 1 191 руб.
+									p.actual-price 980 руб.
+								.item-delete.cart__items
+									p.table-heading Удалить
+									a(href="#")
+										i.del-item
+						li
+							.cart-items__inner
+								.item-img.cart__items
+									.img-wrap
+										img(src="img/cart-img.png", alt="")
+								.item-heading.cart__items
+									p.table-heading Наименование товара
+									a(href="#") Подгузники Pampers Premium Care 1 (2-5 кг) 88 шт.
+								.item-price.cart__items
+									p.table-heading Цена за единицу
+									p.old-price 1 191 руб.
+									p.actual-price 980 руб.
+								.item-count.cart__items
+									p.table-heading Кооличество
+									.count-inner
+										span -
+										input(type="text" value="1")
+										span +
+								.item-all-price.cart__items
+									p.table-heading Общая стоимость
+									p.old-price 1 191 руб.
+									p.actual-price 980 руб.
+								.item-delete.cart__items
+									p.table-heading Удалить
+									a(href="#")
+										i.del-item
+					.coupon-row.cf
+						.delivery-col
+							p.heading Как вы хотите получить ваш заказ?
+							.inp-wrap
+								input#courier(type="radio" name="delivery" checked="checked")
+								label.courier(for="courier") Курьером
+								input#from-mag(type="radio" name="delivery")
+								label.from-mag(for="from-mag") Забрать из магазина (бесплатно)
+							p.delivery-txt.courier-txt.active Доставим ваш заказ вам домой или на работу в удобный вам день. Просто выберите когда вам привезти.
+							p.delivery-txt.from-mag-txt Доставим ваш заказ вам домой или на работу
+							p.when Когда вам удобнее принять наш заказ?
+							i.date-icon
+							input.date-input(type="date")
+						.coupon-col
+							p.heading Промо-код или номер купона: 
+							input(type="text" placeholder="Промокод")
+							input.btn(type="submit" value="Использовать")
+				.result-row
+					.result-row__inner
+						.calc-col
+							.inner
+								p.heading Итоговая стоимость:
+								p
+									strong 8 820 руб. 
+									| - стоимость товаров
+								p
+									strong 0 руб. 
+									| - стоимость доставки
+								p
+									strong 0 руб. 
+									| - скидка по промокоду
+						.result-col
+							p.heading Итоговая
+							p.summ Сумма:
+								strong 8 820
+									span руб.
+					a.btn.continue(href="#") Продолжить
+
+
+
+
+
+
+
+
+
+
+
+block inlineScripts

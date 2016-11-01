@@ -1,0 +1,102 @@
+extends _layout
+block content
+	main.main-content.cf.item-page
+		.container
+			.breadcrumbs
+				.breadcrumbs__inner
+					a(href="#") Главная
+					span.separator >
+					span Корзина
+				h2.page-title Корзина
+			.cart-inner.order-page
+				.cart-inner__top
+					.presonal-data
+						p.heading Ваши контактные данные
+						.input-wrap
+							label Эл. потча
+								span.req *
+								input(type="text" placeholder="Ваш E-mail")
+							label.tel Телефон
+								span.req *
+								input(type="tel" placeholder="+7 (___) ___-__-__")
+							label.name Имя
+								span.req *
+								input(type="text" placeholder="Ваше имя")
+					.delivery-data
+						p.heading Адрес доставки
+						.input-wrap
+							label.city Город
+								span.req *
+								input(type="text" placeholder="Ваш город")
+							label.street Улица
+								span.req *
+								input(type="text" placeholder="Ваша улица")
+						.input-wrap
+							label.house Дом
+								span.req *
+								input(type="text" placeholder="№ дома")
+							label.corpus Корпус
+								input(type="text" placeholder="№ корпуса")
+							label.str Строение
+								input(type="text" placeholder="№ строения")
+							label.office Квартира/офис
+								span.req *
+								input(type="text" placeholder="№ квартиры/офиса")
+						.input-wrap
+							label.floor Этаж
+								input(type="text" placeholder="№ этажа")
+							label.porch Подъезд
+								input(type="text" placeholder="№ Подезда")
+					.payment-method
+						p.heading Способы оплаты
+						.payment-row
+							.payment-col
+								label
+									input(type="radio" name="method")
+									span Наличными курьеру
+							.payment-col
+								label
+									input(type="radio" name="method")
+									span Банковской картой курьеру
+							.payment-col
+								label
+									input(type="radio" name="method")
+									span Оплатить онлайн
+							.payment-col.bonuses-col
+								p.heading Использовать бонусы
+								input(type="text" value="0")
+								a(href="#") Ваши бонусы
+
+				.result-row
+					.result-row__inner
+						.calc-col
+							.inner
+								p.heading Итоговая стоимость:
+								p
+									strong 8 820 руб. 
+									| - стоимость товаров
+								p
+									strong 0 руб. 
+									| - стоимость доставки
+								p
+									strong 0 руб. 
+									| - скидка по промокоду
+						.result-col
+							p.heading Итоговая
+							p.summ Сумма:
+								strong 8 820
+									span руб.
+					a.btn.continue(href="#") Оформить заказ
+					a.back(href="#") вернуться назад
+
+
+
+
+
+
+
+
+
+
+
+block inlineScripts

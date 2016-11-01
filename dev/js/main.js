@@ -170,5 +170,31 @@ $(document).ready(function() {
      	}
      });
 
+
+     //update spinners
+
+     $('.cart-items li').each(function() {
+     	var spins = $(this).find('.count-inner');
+		for (var i = 0, len = spins.length; i < len; i++) {
+		    var spin = spins[i],
+		        span = spin.getElementsByTagName("span"),
+		        input = spin.getElementsByTagName("input")[0];
+		    
+		    input.onchange = function() { input.value = +input.value || 1; };
+		    span[0].onclick = function() { input.value = Math.max(1, input.value - 1); };
+		    span[1].onclick = function() { input.value -= -1; };
+		}
+     });
+
+     $('.delivery-col label').on('click', function(event) {
+     	$('.delivery-col .delivery-txt').removeClass('active');
+     	if($(this).hasClass('courier')) {
+     		$('.delivery-col .courier-txt').addClass('active');
+     	}else {
+     		$('.delivery-col .from-mag-txt').addClass('active');
+     	}
+     });
+    
+
     
 });
