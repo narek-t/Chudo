@@ -15,16 +15,16 @@ block content
 						li
 							a(href="#") История заказов
 						li
-							a.active(href="#") Избранное
+							a(href="#") Избранное
 						li
-							a(href="#") Бонусная карта
+							a.active(href="#") Бонусная карта
 						li
 							a(href="#") Поменять пароль
 				.lk__content
 					.lk-tab
 					.lk-tab
 					.lk-tab
-					.lk-tab.fav-tab.active
+					.lk-tab.fav-tab
 						.horiz-row
 							.swiper-slide
 								.img-wrap
@@ -118,7 +118,8 @@ block content
 									span.basket
 								.discount-notify Скидка
 									span.discount-size 10%
-					.lk-tab
+					.lk-tab.bonus-tab.active
+
 					.lk-tab.change-pass
 						form
 							input.pass-inp(type="password" placeholder="Старый пароль")
