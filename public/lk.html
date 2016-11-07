@@ -165,18 +165,127 @@
           <div class="lk-page cf">
             <aside class="lk__menu">
               <ul>
-                <li><a href="#">Личные данные</a></li>
+                <li><a href="#" class="active">Личные данные</a></li>
                 <li><a href="#">Мои дети</a></li>
                 <li><a href="#">История заказов</a></li>
                 <li><a href="#">Избранное</a></li>
-                <li><a href="#" class="active">Бонусная карта</a></li>
+                <li><a href="#">Бонусная карта</a></li>
                 <li><a href="#">Поменять пароль</a></li>
               </ul>
             </aside>
             <div class="lk__content">
-              <div class="lk-tab"></div>
-              <div class="lk-tab"></div>
-              <div class="lk-tab"></div>
+              <div class="lk-tab active"></div>
+              <div class="lk-tab childs">
+                <ul class="childs-list">
+                  <li>
+                    <div class="child-name">1 Ребенок: <strong>Анюта</strong></div>
+                    <div class="child-gender inline-block">Пол: девочка</div>
+                    <div class="child-birthday inline-block">День рождения: 21 декабря 2013 г.</div>
+                  </li>
+                  <li>
+                    <div class="child-name">2 Ребенок: <strong>Анюта</strong></div>
+                    <div class="child-gender inline-block">Пол: девочка</div>
+                    <div class="child-birthday inline-block">День рождения: 21 декабря 2013 г.</div>
+                  </li>
+                </ul>
+                <div class="add-child">
+                  <p class="heading">Добавить ребенка</p>
+                  <form>
+                    <input type="text" placeholder="Имя"/>
+                    <select class="select-child-gender">
+                      <option value="Пол">Пол</option>
+                      <option value="Пол">Мальчик</option>
+                      <option value="Пол">Девочка</option>
+                    </select>
+                    <input type="text" placeholder="Дата рождения" class="date-birthday"/>
+                    <input type="submit" value="Добавить ребенка" class="btn"/>
+                  </form>
+                </div>
+              </div>
+              <div class="lk-tab history-tab">
+                <div class="actual-orders">
+                  <p class="heading">Актуальные заказы</p>
+                  <table>
+                    <tr>
+                      <th>№</th>
+                      <th>Дата заказа</th>
+                      <th>Товары</th>
+                      <th>Общая сумма</th>
+                      <th>Статус</th>
+                      <th>Действия</th>
+                    </tr>
+                    <tr>
+                      <td>12234</td>
+                      <td>06.10.2016 г.</td>
+                      <td>Подгузники Pampers Premium Care 1 (2-5 кг) 88 шт. x4 | Крем-суп Hipp овощной | Подгузники Pampers Premium Care 1 (2-5 кг) 88 шт. x12</td>
+                      <td>12 010 руб.</td>
+                      <td class="in-progress">В обработке</td>
+                      <td><a href="#" class="btn cancel-order">ОТменить</a></td>
+                    </tr>
+                    <tr>
+                      <td>12234</td>
+                      <td>06.10.2016 г.</td>
+                      <td>Подгузники Pampers Premium Care 1 (2-5 кг) 88 шт. x4 | Крем-суп Hipp овощной | Подгузники Pampers Premium Care 1 (2-5 кг) 88 шт. x12</td>
+                      <td>12 010 руб.</td>
+                      <td class="in-progress">В обработке</td>
+                      <td><a href="#" class="btn cancel-order">ОТменить</a></td>
+                    </tr>
+                    <tr>
+                      <td>12234</td>
+                      <td>06.10.2016 г.</td>
+                      <td>Подгузники Pampers Premium Care 1 (2-5 кг) 88 шт. x4 | Крем-суп Hipp овощной | Подгузники Pampers Premium Care 1 (2-5 кг) 88 шт. x12</td>
+                      <td>12 010 руб.</td>
+                      <td class="in-progress">В обработке</td>
+                      <td><a href="#" class="btn cancel-order">ОТменить</a></td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="passed-orders">
+                  <p class="heading">История заказов</p>
+                  <table>
+                    <tr>
+                      <th>№</th>
+                      <th>Дата заказа</th>
+                      <th>Товары</th>
+                      <th>Общая сумма</th>
+                      <th>Статус</th>
+                      <th>Действия</th>
+                    </tr>
+                    <tr>
+                      <td>12234</td>
+                      <td>06.10.2016 г.</td>
+                      <td>Крем-суп Hipp овощной | Подгузники Pampers Premium Care 1 (2-5 кг) 88 шт. x12</td>
+                      <td>12 010 руб.</td>
+                      <td class="done">Выполнен</td>
+                      <td><a href="#" class="btn repeat-order">повторить</a></td>
+                    </tr>
+                    <tr>
+                      <td>12234</td>
+                      <td>06.10.2016 г.</td>
+                      <td>Подгузники Pampers Premium Care 1 (2-5 кг) 88 шт. x4 </td>
+                      <td>12 010 руб.</td>
+                      <td class="canceled">Отменен</td>
+                      <td><a href="#" class="btn repeat-order">повторить</a></td>
+                    </tr>
+                    <tr>
+                      <td>12234</td>
+                      <td>06.10.2016 г.</td>
+                      <td>Крем-суп Hipp овощной | Подгузники Pampers Premium Care 1 (2-5 кг) 88 шт. x12</td>
+                      <td>12 010 руб.</td>
+                      <td class="done">Выполнен</td>
+                      <td><a href="#" class="btn repeat-order">повторить</a></td>
+                    </tr>
+                    <tr>
+                      <td>12234</td>
+                      <td>06.10.2016 г.</td>
+                      <td>Подгузники Pampers Premium Care 1 (2-5 кг) 88 шт. x4 </td>
+                      <td>12 010 руб.</td>
+                      <td class="canceled">Отменен</td>
+                      <td><a href="#" class="btn repeat-order">повторить</a></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
               <div class="lk-tab fav-tab">
                 <div class="horiz-row">
                   <div class="swiper-slide">
@@ -225,7 +334,51 @@
                   </div>
                 </div>
               </div>
-              <div class="lk-tab bonus-tab active"></div>
+              <div class="lk-tab bonus-tab">
+                <div class="bonus-tab__inner">
+                  <div class="number-side">
+                    <p class="number">Номер вашей бонусной карты <strong>1112 3456 8981 0001</strong></p>
+                    <p class="balance">Ваш бонусный баланс состовляет<span>4987</span></p>
+                    <div class="history">
+                      <p class="heading">История начисления баллов</p>
+                      <table>
+                        <tr>
+                          <th>№</th>
+                          <th>Дата заказа</th>
+                          <th>Общая сумма</th>
+                          <th>Действия</th>
+                        </tr>
+                        <tr>
+                          <td>12234</td>
+                          <td>06.10.2016 г.</td>
+                          <td>+12 балов</td>
+                          <td><a href="#" class="btn">Подробно</a></td>
+                        </tr>
+                        <tr>
+                          <td>122</td>
+                          <td>06.10.2016 г.</td>
+                          <td>+12 балов</td>
+                          <td><a href="#" class="btn">Подробно</a></td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>06.10.2016 г.</td>
+                          <td>+12 балов</td>
+                          <td><a href="#" class="btn">Подробно</a></td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="sert-side">
+                    <div class="my-cart">
+                      <p>1112 3456 8981 0001</p>
+                    </div>
+                    <div class="active-cart">
+                      <p class="heading">Активировать подарочный сертификат</p><a href="#" class="gift-code btn"> <i class="gift"></i>Ввести код</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="lk-tab change-pass">
                 <form>
                   <input type="password" placeholder="Старый пароль" class="pass-inp"/>

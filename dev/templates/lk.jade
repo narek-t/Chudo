@@ -9,7 +9,7 @@ block content
 				aside.lk__menu
 					ul
 						li
-							a(href="#") Личные данные
+							a.active(href="#") Личные данные
 						li
 							a(href="#") Мои дети
 						li
@@ -17,13 +17,110 @@ block content
 						li
 							a(href="#") Избранное
 						li
-							a.active(href="#") Бонусная карта
+							a(href="#") Бонусная карта
 						li
 							a(href="#") Поменять пароль
 				.lk__content
-					.lk-tab
-					.lk-tab
-					.lk-tab
+					.lk-tab.active
+					.lk-tab.childs
+						ul.childs-list
+							li
+								.child-name 1 Ребенок: 
+									strong Анюта
+								.child-gender.inline-block Пол: девочка
+								.child-birthday.inline-block День рождения: 21 декабря 2013 г.
+							li
+								.child-name 2 Ребенок: 
+									strong Анюта
+								.child-gender.inline-block Пол: девочка
+								.child-birthday.inline-block День рождения: 21 декабря 2013 г.
+						.add-child
+							p.heading Добавить ребенка
+							form
+								input(type="text" placeholder="Имя")
+								select.select-child-gender
+									option(value="Пол") Пол
+									option(value="Пол") Мальчик
+									option(value="Пол") Девочка
+								input.date-birthday(type="text" placeholder="Дата рождения")
+								input.btn(type="submit" value="Добавить ребенка")
+					.lk-tab.history-tab
+						.actual-orders
+							p.heading Актуальные заказы
+							table
+								tr
+									th №
+									th Дата заказа
+									th Товары
+									th Общая сумма
+									th Статус
+									th Действия
+								tr
+									td 12234
+									td 06.10.2016 г.
+									td Подгузники Pampers Premium Care 1 (2-5 кг) 88 шт. x4 | Крем-суп Hipp овощной | Подгузники Pampers Premium Care 1 (2-5 кг) 88 шт. x12
+									td 12 010 руб.
+									td.in-progress В обработке
+									td
+										a.btn.cancel-order(href="#") ОТменить
+								tr
+									td 12234
+									td 06.10.2016 г.
+									td Подгузники Pampers Premium Care 1 (2-5 кг) 88 шт. x4 | Крем-суп Hipp овощной | Подгузники Pampers Premium Care 1 (2-5 кг) 88 шт. x12
+									td 12 010 руб.
+									td.in-progress В обработке
+									td
+										a.btn.cancel-order(href="#") ОТменить
+								tr
+									td 12234
+									td 06.10.2016 г.
+									td Подгузники Pampers Premium Care 1 (2-5 кг) 88 шт. x4 | Крем-суп Hipp овощной | Подгузники Pampers Premium Care 1 (2-5 кг) 88 шт. x12
+									td 12 010 руб.
+									td.in-progress В обработке
+									td
+										a.btn.cancel-order(href="#") ОТменить
+						.passed-orders
+							p.heading История заказов
+							table
+								tr
+									th №
+									th Дата заказа
+									th Товары
+									th Общая сумма
+									th Статус
+									th Действия
+								tr
+									td 12234
+									td 06.10.2016 г.
+									td Крем-суп Hipp овощной | Подгузники Pampers Premium Care 1 (2-5 кг) 88 шт. x12
+									td 12 010 руб.
+									td.done Выполнен
+									td
+										a.btn.repeat-order(href="#") повторить
+								tr
+									td 12234
+									td 06.10.2016 г.
+									td Подгузники Pampers Premium Care 1 (2-5 кг) 88 шт. x4 
+									td 12 010 руб.
+									td.canceled Отменен
+									td
+										a.btn.repeat-order(href="#") повторить
+								tr
+									td 12234
+									td 06.10.2016 г.
+									td Крем-суп Hipp овощной | Подгузники Pampers Premium Care 1 (2-5 кг) 88 шт. x12
+									td 12 010 руб.
+									td.done Выполнен
+									td
+										a.btn.repeat-order(href="#") повторить
+								tr
+									td 12234
+									td 06.10.2016 г.
+									td Подгузники Pampers Premium Care 1 (2-5 кг) 88 шт. x4 
+									td 12 010 руб.
+									td.canceled Отменен
+									td
+										a.btn.repeat-order(href="#") повторить
 					.lk-tab.fav-tab
 						.horiz-row
 							.swiper-slide
@@ -118,7 +215,49 @@ block content
 									span.basket
 								.discount-notify Скидка
 									span.discount-size 10%
-					.lk-tab.bonus-tab.active
+					.lk-tab.bonus-tab
+						.bonus-tab__inner
+							.number-side
+								p.number Номер вашей бонусной карты 
+									strong 1112 3456 8981 0001
+								p.balance Ваш бонусный баланс состовляет
+									span 4987
+								.history
+									p.heading История начисления баллов
+									table
+										tr
+											th №
+											th Дата заказа
+											th Общая сумма
+											th Действия
+										tr
+											td 12234
+											td 06.10.2016 г.
+											td +12 балов
+											td
+												a.btn(href="#") Подробно
+
+										tr
+											td 122
+											td 06.10.2016 г.
+											td +12 балов
+											td
+												a.btn(href="#") Подробно
+										tr
+											td 1
+											td 06.10.2016 г.
+											td +12 балов
+											td
+												a.btn(href="#") Подробно
+							.sert-side
+								.my-cart
+									p 1112 3456 8981 0001
+								.active-cart
+									p.heading Активировать подарочный сертификат
+									a.gift-code.btn(href="#") 
+										i.gift
+										| Ввести код
+
 
 					.lk-tab.change-pass
 						form
