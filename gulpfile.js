@@ -6,6 +6,8 @@
 // -------------------------------------
 
 const gulp = require('gulp');
+const changed = require('gulp-changed');
+const postcss = require('gulp-postcss');
 const sourcemaps = require('gulp-sourcemaps');
 const del = require('del');
 const browserSync = require('browser-sync').create();
@@ -13,13 +15,14 @@ const notify = require('gulp-notify');
 const cssnano = require('gulp-cssnano');
 const sass = require('gulp-sass');
 const jade = require('gulp-jade');
-const autoprefixer = require('gulp-autoprefixer');
+const autoprefixer = require('autoprefixer');
 const plumber = require('gulp-plumber');
 const rename = require('gulp-rename');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const spritesmith = require('gulp.spritesmith');
 const merge = require('merge-stream');
+// const imagemin = require('gulp-imagemin');
 
 // --------------------------------------------
 //  Error message
@@ -45,19 +48,19 @@ gulp.task('styles', function() {
 		}))
 		// .pipe(sourcemaps.init())
 		.pipe(sass())
-		.pipe(autoprefixer({
-			browsers: ['last 5 versions', 'ie 8', 'ie 9', '> 1%'],
-			cascade: false
-		}))
+		.pipe(postcss([ 
+			autoprefixer({ 
+				browsers: ['last 5 versions', 'ie 8', 'ie 9', '> 1%'],
+				cascade: false,
+			}) 
+		]))
 		.pipe(rename({
 			suffix: '.min'
 		}))
 		.pipe(cssnano())
 		// .pipe(sourcemaps.write('/maps'))
 		.pipe(gulp.dest('public/css/'))
-		.pipe(browserSync.reload({
-			stream: true
-		}));
+		.pipe(browserSync.stream({match: '**/*.css'}));
 });
 
 
@@ -70,6 +73,7 @@ gulp.task('jade', function() {
 		.pipe(plumber({
 			errorHandler: onError
 		}))
+		.pipe(changed('public', {extension: '.html'}))
 		.pipe(jade({
 			pretty: '  '
 		}))
@@ -148,7 +152,7 @@ gulp.task('sprites', function() {
 	var cssStream = spriteData.css
 		.pipe(gulp.dest('dev/sass/'));
 	return merge(imgStream, cssStream)
-	.pipe(browserSync.reload({
+		.pipe(browserSync.reload({
 			stream: true
 		}));
 
@@ -160,6 +164,12 @@ gulp.task('sprites', function() {
 
 gulp.task('images', function() {
 	return gulp.src(['dev/img/**', '!dev/img/{sprites,sprites/**}'])
+		.pipe(changed('public/img'))
+		// .pipe(imagemin({
+		// 	optimizationLevel: 4,
+		// 	progressive: true,
+		// 	interlaced: true,
+		// }))
 		.pipe(gulp.dest('public/img'))
 		.pipe(browserSync.reload({
 			stream: true
@@ -188,7 +198,7 @@ gulp.task('clean', function() {
 
 gulp.task('watch', function() {
 	gulp.watch('dev/sass/**/*.*', gulp.series('styles'));
-	gulp.watch('dev/templates/**/*.*', gulp.series('jade'));
+	gulp.watch('dev/templates/**/*.jade', gulp.series('jade'));
 	gulp.watch(['dev/js/**/*.js', '!dev/js/lib/**'], gulp.series('scripts'));
 	gulp.watch('dev/js/lib/**', gulp.series('libScripts'));
 	gulp.watch('dev/img/sprites/*.{png,jpg}', gulp.series('sprites'));
