@@ -1,4 +1,3 @@
-
 'use strict';
 
 // -------------------------------------
@@ -6,7 +5,7 @@
 // -------------------------------------
 
 const gulp = require('gulp');
-const changed = require('gulp-changed');
+const path = require('path');
 const postcss = require('gulp-postcss');
 const sourcemaps = require('gulp-sourcemaps');
 const del = require('del');
@@ -22,7 +21,11 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const spritesmith = require('gulp.spritesmith');
 const merge = require('merge-stream');
+//uncomment this if you want imagemin
 // const imagemin = require('gulp-imagemin');
+
+const JadeInheritance = require('jade-inheritance');
+
 
 // --------------------------------------------
 //  Error message
@@ -68,19 +71,33 @@ gulp.task('styles', function() {
 //  Task: compile Jade to HTML
 // --------------------------------------------
 
+function isPartial(file) {
+  return path.basename(file).match(/^_.*/);
+}
+
+function findAffectedFiles(changedFile) {
+  return new JadeInheritance(changedFile, 'dev/templates', {basedir: 'dev/templates'})
+    .files
+    .filter(function(file) { return !isPartial(file); })
+    .map(function(file) { return 'dev/templates/' + file; })
+}
+
+function compileJade(files) {
+  return gulp.src(files, {base:'dev/templates'})
+    .pipe(plumber({
+        errorHandler: onError
+    }))
+    .pipe(jade({
+        pretty: true,
+    }))
+    .pipe(gulp.dest('public'))
+    .pipe(browserSync.reload({
+        stream: true
+    }));
+}
+
 gulp.task('jade', function() {
-	return gulp.src('dev/templates/**/!(_)*.jade')
-		.pipe(plumber({
-			errorHandler: onError
-		}))
-		.pipe(changed('public', {extension: '.html'}))
-		.pipe(jade({
-			pretty: '  '
-		}))
-		.pipe(gulp.dest('public'))
-		.pipe(browserSync.reload({
-			stream: true
-		}));
+  return compileJade('dev/templates/**/!(_)*.jade');
 });
 
 // --------------------------------------------
@@ -165,6 +182,7 @@ gulp.task('sprites', function() {
 gulp.task('images', function() {
 	return gulp.src(['dev/img/**', '!dev/img/{sprites,sprites/**}'])
 		.pipe(changed('public/img'))
+		//uncomment this if you want imagemin
 		// .pipe(imagemin({
 		// 	optimizationLevel: 4,
 		// 	progressive: true,
@@ -198,12 +216,14 @@ gulp.task('clean', function() {
 
 gulp.task('watch', function() {
 	gulp.watch('dev/sass/**/*.*', gulp.series('styles'));
-	gulp.watch('dev/templates/**/*.jade', gulp.series('jade'));
 	gulp.watch(['dev/js/**/*.js', '!dev/js/lib/**'], gulp.series('scripts'));
 	gulp.watch('dev/js/lib/**', gulp.series('libScripts'));
 	gulp.watch('dev/img/sprites/*.{png,jpg}', gulp.series('sprites'));
 	gulp.watch(['dev/img/**/*', '!dev/img/{sprites,sprites/**}'], gulp.series('images'));
 	gulp.watch('dev/fonts/**/*.{ttf,woff,eot,svg,otf}', gulp.series('fonts'));
+	gulp.watch('dev/templates/**/*.jade').on('change', function(changedFile) {
+    	return compileJade(isPartial(changedFile) ? findAffectedFiles(changedFile) : changedFile);
+  	});
 });
 
 // --------------------------------------------
@@ -212,7 +232,7 @@ gulp.task('watch', function() {
 
 gulp.task('build', gulp.series(
 	'clean',
-	gulp.parallel('styles', 'jade', 'scripts', 'fonts', 'sprites', 'images', 'libScripts')));
+	gulp.parallel('styles', 'scripts', 'jade', 'fonts', 'sprites', 'images', 'libScripts')));
 
 // --------------------------------------------
 //  Task: Basic server
