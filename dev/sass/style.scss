@@ -111,6 +111,9 @@ a img.aligncenter {
 	width: auto;
 	z-index: 100000; /* Above WP toolbar. */
 }
+.inline-block {
+	display: inline-block;
+}
 
 body {
 	background: url(../img/bg.jpg) top center no-repeat;
@@ -3684,9 +3687,6 @@ html, body {
 		color: #ff738d;
 	}
 }
-.inline-block {
-	display: inline-block;
-}
 
 .childs {
 	.childs-list {
@@ -3763,6 +3763,85 @@ html, body {
 		font-family: 'bsansbold';
 		&:hover {
 			background: #82c502;
+		}
+	}
+}
+
+.personal-tab-col {
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 65px;
+	&:first-child {
+		margin-left: 0;
+	}
+	.choose-photo {
+		width: 190px;
+		height: 210px;
+		background-color: #85e7fc;
+		border-radius: 15px;
+		display: block;
+		background-position: center center;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		transition: all .3s ease-in-out;
+		position: relative;
+		&:hover {
+			background-color: #61e1fc;
+		}
+		input {
+			display: none;
+		}
+		.photo-edit {
+			@include sprite($photo-edit);
+			position: absolute;
+			right: 10px;
+			top: 10px;
+		}
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		color: #898989;
+		font-size: 14px;
+		font-family: 'PT Sans';
+		li {
+			margin-bottom: 25px;
+			&.name span {
+				font-size: 21px;
+			}
+		}
+		span {
+			display: block;
+			font-size: 19px;
+			font-weight: 700;
+			margin-top: 2px;
+		}
+	}
+}
+
+.personal-tab-row.last-row {
+	padding-top: 30px;
+	margin-top: 30px;
+	border-top: 1px solid #92de00;
+	ul li {
+		margin-bottom: 5px;
+		span {
+			font-size: 16px;
+		}
+	}
+	.btn {
+		height: 25px;
+		background-color: #92de00;
+		border-radius: 13px;
+		box-shadow: 0 1px 0 #6ba301;
+		display: inline-block;
+		font-size: 14px;
+		line-height: 28px;
+		padding: 0 15px;
+		margin-top: 20px;
+		&:hover {
+			background: #81c302;
 		}
 	}
 }

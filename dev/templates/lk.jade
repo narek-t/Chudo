@@ -21,7 +21,40 @@ block content
 						li
 							a(href="#") Поменять пароль
 				.lk__content
-					.lk-tab.active
+					.lk-tab.personal-data-tab.active
+						.personal-tab-row
+							.personal-tab-col
+								label.choose-photo(style="background-image: url(img/ava-default.png)")
+									input(type="file")
+									i.photo-edit
+							.personal-tab-col
+								ul
+									li.name ФИО
+										span Анна Борисовна
+									li Дата рождения
+										span 6 марта 1986 г.
+									li Пол
+										span Женский
+							.personal-tab-col
+								ul
+									li Телефон
+										span +7 931 999-88-77
+									li Доп. телефон
+										span +7 999 834-08-99
+									li E-mail
+										span annamama@mail.ru
+						.personal-tab-row.last-row
+							.personal-tab-col
+								ul
+									li Адреса доставки
+										span 1. г. Тюмень, ул. Домостроителей, д.36
+										span 2. г. Тюмень, ул. Ленина, д.4
+								a.btn.add-address(href="#") Добавить адрес
+							.personal-tab-col
+								ul
+									li Любимый магазин
+										span 1. г. Тюмень, ул. Домостроителей, д.35
+								a.btn.change-fav-shop(href="#") изменить
 					.lk-tab.childs
 						ul.childs-list
 							li
