@@ -115,17 +115,15 @@ a img.aligncenter {
 	display: inline-block;
 }
 
-body {
-	background: url(../img/bg.jpg) top center no-repeat;
-	background-size: cover;
-}
 html, body {
   height: 100%;
   font-family: $fontFamily;
 }
 .all-wrapper {
-  min-height: 100%;
-  margin-bottom: -246px; 
+	min-height: 100%;
+	margin-bottom: -246px; 
+	background: url(../img/bg.jpg) top center no-repeat;
+	background-size: cover;
 }
 .all-wrapper::after {
   content: "";
@@ -233,9 +231,6 @@ html, body {
 			text-decoration: none;
 			border-bottom: 2px solid transparent;
 			padding-bottom: 3px;
-			@media screen and (max-width: 980px) {
-				color: red;
-			}
 		}
 		.current-menu-item a,
 		a:hover {
@@ -818,10 +813,34 @@ html, body {
 			height: auto;
 			transition: all .3s ease-in-out;
 		}
+		.title {
+			max-height: 54px;
+			overflow: hidden;
+			position: relative;
+			text-align: justify;
+			color: #0072bc;
+			margin-right: -1em;
+			padding-right: 1em;
+			&::before {
+				content: '...';
+				position: absolute;
+				right: 0;
+				bottom: 0;
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				right: 0;
+				width: 1em;
+				height: 1em;
+				margin-top: 0.2em;
+				background: #fff;
+			}
+		}
 		.title a {
 			color: $linkColor;
 			font-size: 14px;
-			line-height: 19px;
+			line-height: 18px;
 			text-decoration: none;
 			font-family: 'PT Sans';
 			&:hover {
@@ -1740,7 +1759,7 @@ html, body {
 	background-image: url(../img/delivery.png);
 	background-repeat: no-repeat;
 	background-position: right bottom;
-	padding-right: 40%;
+	padding-right: 420px;
 }
 
 .club .single-content {
@@ -1863,7 +1882,7 @@ html, body {
 
 .about-top {
 	&__inner {
-		max-width: 700px;
+		max-width: 600px;
 	}
 	background: url(../img/about-bg.jpg) top center no-repeat;
 	padding-bottom: 250px;
@@ -3154,7 +3173,7 @@ html, body {
 			vertical-align: middle;
 			margin-left: 35px;
 		}
-		input[type=date] {
+		input[type=text] {
 			height: 40px;
 			border: 1px solid #e1e1e1;
 			border-radius: 5px;
@@ -3846,7 +3865,7 @@ html, body {
 	}
 }
 
-
+@import "_media.scss";
 
 
 

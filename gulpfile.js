@@ -3,7 +3,6 @@
 // -------------------------------------
 //   devDependencies
 // -------------------------------------
-
 const gulp = require('gulp');
 const path = require('path');
 const postcss = require('gulp-postcss');
@@ -21,14 +20,15 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const spritesmith = require('gulp.spritesmith');
 const merge = require('merge-stream');
+const JadeInheritance = require('jade-inheritance');
+const changed = require('gulp-changed');
+
 //uncomment this if you want imagemin
 // const imagemin = require('gulp-imagemin');
 
-const JadeInheritance = require('jade-inheritance');
-
 
 // --------------------------------------------
-//  Error message
+//  Error catching
 // --------------------------------------------
 
 const onError = function(err) {
@@ -70,18 +70,23 @@ gulp.task('styles', function() {
 // --------------------------------------------
 //  Task: compile Jade to HTML
 // --------------------------------------------
-
+ 
+/*
+All .jade files with prefix "_" is layout files,
+it means when you edit file with prefix "_" 
+all your compiled .html files will update.
+If you edit any other .jade file with NO prefix
+will update only appropriate .html file.
+*/
 function isPartial(file) {
   return path.basename(file).match(/^_.*/);
 }
-
 function findAffectedFiles(changedFile) {
   return new JadeInheritance(changedFile, 'dev/templates', {basedir: 'dev/templates'})
     .files
     .filter(function(file) { return !isPartial(file); })
     .map(function(file) { return 'dev/templates/' + file; })
 }
-
 function compileJade(files) {
   return gulp.src(files, {base:'dev/templates'})
     .pipe(plumber({
@@ -95,10 +100,30 @@ function compileJade(files) {
         stream: true
     }));
 }
-
 gulp.task('jade', function() {
   return compileJade('dev/templates/**/!(_)*.jade');
 });
+
+
+/* 
+If you don't want all features above
+just uncomment task below and
+comment functions above.
+*/
+
+// gulp.task('jade', function() {
+// 	return gulp.src('dev/templates/**/!(_)*.jade')
+// 		.pipe(plumber({
+// 			errorHandler: onError
+// 		}))
+// 		.pipe(jade({
+// 			pretty: true,
+// 		}))
+// 		.pipe(gulp.dest('public'))
+// 		.pipe(browserSync.reload({
+// 			stream: true
+// 		}));
+// });
 
 // --------------------------------------------
 //  Task: Minify, concat JavaScript files
@@ -172,7 +197,6 @@ gulp.task('sprites', function() {
 		.pipe(browserSync.reload({
 			stream: true
 		}));
-
 });
 
 // --------------------------------------------
@@ -183,11 +207,11 @@ gulp.task('images', function() {
 	return gulp.src(['dev/img/**', '!dev/img/{sprites,sprites/**}'])
 		.pipe(changed('public/img'))
 		//uncomment this if you want imagemin
-		// .pipe(imagemin({
-		// 	optimizationLevel: 4,
-		// 	progressive: true,
-		// 	interlaced: true,
-		// }))
+		/* .pipe(imagemin({
+		 	optimizationLevel: 4,
+		 	progressive: true,
+		 	interlaced: true,
+		 })) */
 		.pipe(gulp.dest('public/img'))
 		.pipe(browserSync.reload({
 			stream: true
@@ -224,6 +248,9 @@ gulp.task('watch', function() {
 	gulp.watch('dev/templates/**/*.jade').on('change', function(changedFile) {
     	return compileJade(isPartial(changedFile) ? findAffectedFiles(changedFile) : changedFile);
   	});
+  	/* comment watch above and uncomment watch below if you don't want Jade to HTML compile
+  	with prefix "_".*/
+  	// gulp.watch('dev/templates/**/*.*', gulp.series('jade'));
 });
 
 // --------------------------------------------

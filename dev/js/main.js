@@ -19,6 +19,20 @@ $(document).ready(function() {
 	        nextButton: ".btn-next-" + index,
 	        prevButton: ".btn-prev-" + index,
 	        slidesPerView: $(this).hasClass('brands-slider') ? 6 : 5,
+	        breakpoints: {
+	        	480: {
+			      slidesPerView: 1,
+			    },
+	        	650: {
+			      slidesPerView: 2,
+			    },
+	        	900: {
+			      slidesPerView: 3,
+			    },
+			    1024: {
+			      slidesPerView: 4,
+			    },
+			},
 	    });
 	});
 	var hotSwiper = new Swiper ('.hot-slider', {
@@ -27,6 +41,11 @@ $(document).ready(function() {
 	    spaceBetween: 20,
 	    nextButton: ".hot-next",
 	    prevButton: ".hot-prev",
+	    breakpoints: {
+        	900: {
+		      slidesPerView: 1,
+		    },
+		},
 	});
 	$(".cat-row__buttons a").click(function(event) {
 		event.preventDefault();
@@ -202,6 +221,11 @@ $(document).ready(function() {
 	    monthsShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек']
 	};
      pickmeup('.date-birthday', {
+	    format  : 'Y-m-d',
+	    locale: 'ru',
+	    default_date: false,
+	});
+     pickmeup('.cart-inner .delivery-col input[type=text]', {
 	    format  : 'Y-m-d',
 	    locale: 'ru',
 	    default_date: false,
