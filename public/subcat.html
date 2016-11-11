@@ -21,7 +21,7 @@
         </div>
         <div class="top-nav-wrapper">
           <div class="container">
-            <button class="toggle-mobile-nav"></button>
+            <button class="toggle-mobile-nav"><span></span><span></span><span></span></button>
             <ul class="top-nav">
               <li class="current-menu-item"><a href="#">Главная</a></li>
               <li><a href="#">Клуб покупателей</a></li>
@@ -163,132 +163,134 @@
             <h2 class="page-title">Подгузники</h2>
           </div>
           <div class="cat__content cf">
-            <aside class="filter">
-              <div class="filter__block">
-                <p class="heading">Категория</p>
-                <input type="radio" id="cat1" name="cat"/>
-                <label for="cat1">Подгузники</label>
-                <input type="radio" id="cat2" name="cat"/>
-                <label for="cat2">Трусики</label>
-                <input type="radio" id="cat3" name="cat"/>
-                <label for="cat3">Для купания</label>
-              </div>
-              <div class="filter__block">
-                <p class="heading">Производитель</p>
-                <input type="checkbox" id="prod1"/>
-                <label for="prod1">Pampers</label>
-                <input type="checkbox" id="prod2"/>
-                <label for="prod2">Huggies</label>
-                <input type="checkbox" id="prod3"/>
-                <label for="prod3">Libero</label>
-                <input type="checkbox" id="prod4"/>
-                <label for="prod4">Goon</label>
-                <input type="checkbox" id="prod5"/>
-                <label for="prod5">Maneki (Манеки)</label>
-                <input type="checkbox" id="prod6"/>
-                <label for="prod6">Merries</label>
-                <input type="checkbox" id="prod7"/>
-                <label for="prod7">Milly Tilly</label>
-                <input type="checkbox" id="prod8"/>
-                <label for="prod8">Moony</label>
-              </div>
-              <div class="filter__block">
-                <p class="heading">Пол</p>
-                <input type="checkbox" id="sex1"/>
-                <label for="sex1">Подгузники</label>
-                <input type="checkbox" id="sex2"/>
-                <label for="sex2">Трусики</label>
-              </div>
-              <div class="filter__block">
-                <p class="heading">Стоимость, руб.</p>
-                <div id="range-slider"></div>
-                <div class="price-txt cf">
-                  <p>от  <span id="range-slider-min"></span></p>
-                  <p>до  <span id="range-slider-max"></span></p>
+            <aside class="filter"><span class="filter-open"><i class="filter-open-ico"></i></span>
+              <div class="filter__inner">
+                <div class="filter__block">
+                  <p class="heading">Категория</p>
+                  <input type="radio" id="cat1" name="cat"/>
+                  <label for="cat1">Подгузники</label>
+                  <input type="radio" id="cat2" name="cat"/>
+                  <label for="cat2">Трусики</label>
+                  <input type="radio" id="cat3" name="cat"/>
+                  <label for="cat3">Для купания</label>
                 </div>
-                <input id="range_min" type="hidden"/>
-                <input id="range_max" type="hidden"/>
-              </div>
-              <div class="filter__block">
-                <p class="heading">Возраст</p>
-                <div class="select-wr">
-                  <p>от</p>
-                  <select class="filter-select">
-                    <option value="1">Любой</option>
-                    <option value="1">10</option>
-                    <option value="1">20</option>
-                    <option value="1">30</option>
-                  </select>
+                <div class="filter__block">
+                  <p class="heading">Производитель</p>
+                  <input type="checkbox" id="prod1"/>
+                  <label for="prod1">Pampers</label>
+                  <input type="checkbox" id="prod2"/>
+                  <label for="prod2">Huggies</label>
+                  <input type="checkbox" id="prod3"/>
+                  <label for="prod3">Libero</label>
+                  <input type="checkbox" id="prod4"/>
+                  <label for="prod4">Goon</label>
+                  <input type="checkbox" id="prod5"/>
+                  <label for="prod5">Maneki (Манеки)</label>
+                  <input type="checkbox" id="prod6"/>
+                  <label for="prod6">Merries</label>
+                  <input type="checkbox" id="prod7"/>
+                  <label for="prod7">Milly Tilly</label>
+                  <input type="checkbox" id="prod8"/>
+                  <label for="prod8">Moony</label>
                 </div>
-                <div class="select-wr">
-                  <p>до</p>
-                  <select class="filter-select">
-                    <option value="1">Любой</option>
-                    <option value="1">10</option>
-                    <option value="1">20</option>
-                    <option value="1">30</option>
-                  </select>
+                <div class="filter__block">
+                  <p class="heading">Пол</p>
+                  <input type="checkbox" id="sex1"/>
+                  <label for="sex1">Подгузники</label>
+                  <input type="checkbox" id="sex2"/>
+                  <label for="sex2">Трусики</label>
                 </div>
+                <div class="filter__block">
+                  <p class="heading">Стоимость, руб.</p>
+                  <div id="range-slider"></div>
+                  <div class="price-txt cf">
+                    <p>от  <span id="range-slider-min"></span></p>
+                    <p>до  <span id="range-slider-max"></span></p>
+                  </div>
+                  <input id="range_min" type="hidden"/>
+                  <input id="range_max" type="hidden"/>
+                </div>
+                <div class="filter__block">
+                  <p class="heading">Возраст</p>
+                  <div class="select-wr">
+                    <p>от</p>
+                    <select class="filter-select">
+                      <option value="1">Любой</option>
+                      <option value="1">10</option>
+                      <option value="1">20</option>
+                      <option value="1">30</option>
+                    </select>
+                  </div>
+                  <div class="select-wr">
+                    <p>до</p>
+                    <select class="filter-select">
+                      <option value="1">Любой</option>
+                      <option value="1">10</option>
+                      <option value="1">20</option>
+                      <option value="1">30</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="filter__block">
+                  <p class="heading">Размер</p>
+                  <ul class="sizes">
+                    <li>
+                      <input type="checkbox" id="size1"/>
+                      <label for="size1">1</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="size2"/>
+                      <label for="size1">2</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="size3"/>
+                      <label for="size1">3</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="size4"/>
+                      <label for="size1">4</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="size5"/>
+                      <label for="size1">5</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="size7"/>
+                      <label for="size1">7</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="sizes"/>
+                      <label for="sizes">S</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="sizem"/>
+                      <label for="sizem">M</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="sizel"/>
+                      <label for="sizel">L</label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="sizexl"/>
+                      <label for="sizexl">XL</label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="filter__block">
+                  <p class="heading">Количество, шт.</p>
+                  <input type="radio" id="val1"/>
+                  <label for="val1">до 20</label>
+                  <input type="radio" id="val2"/>
+                  <label for="val2">21-50</label>
+                  <input type="radio" id="val3"/>
+                  <label for="val3">51-100</label>
+                  <input type="radio" id="val4"/>
+                  <label for="val4">101-200</label>
+                  <input type="radio" id="val5"/>
+                  <label for="val5">от 200</label>
+                </div>
+                <input type="submit" value="Подобрать" class="btn"/>
               </div>
-              <div class="filter__block">
-                <p class="heading">Размер</p>
-                <ul class="sizes">
-                  <li>
-                    <input type="checkbox" id="size1"/>
-                    <label for="size1">1</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="size2"/>
-                    <label for="size1">2</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="size3"/>
-                    <label for="size1">3</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="size4"/>
-                    <label for="size1">4</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="size5"/>
-                    <label for="size1">5</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="size7"/>
-                    <label for="size1">7</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="sizes"/>
-                    <label for="sizes">S</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="sizem"/>
-                    <label for="sizem">M</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="sizel"/>
-                    <label for="sizel">L</label>
-                  </li>
-                  <li>
-                    <input type="checkbox" id="sizexl"/>
-                    <label for="sizexl">XL</label>
-                  </li>
-                </ul>
-              </div>
-              <div class="filter__block">
-                <p class="heading">Количество, шт.</p>
-                <input type="radio" id="val1"/>
-                <label for="val1">до 20</label>
-                <input type="radio" id="val2"/>
-                <label for="val2">21-50</label>
-                <input type="radio" id="val3"/>
-                <label for="val3">51-100</label>
-                <input type="radio" id="val4"/>
-                <label for="val4">101-200</label>
-                <input type="radio" id="val5"/>
-                <label for="val5">от 200</label>
-              </div>
-              <input type="submit" value="Подобрать" class="btn"/>
             </aside>
             <div class="cat__content-inner">
               <div class="horiz-row">
@@ -508,6 +510,7 @@
         <input type="submit" value="ПОлучить"/>
       </form>
     </div>
+    <div class="shadow"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
     <script src="js/lib/lib.min.js"></script>

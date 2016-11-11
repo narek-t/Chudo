@@ -21,7 +21,7 @@
         </div>
         <div class="top-nav-wrapper">
           <div class="container">
-            <button class="toggle-mobile-nav"></button>
+            <button class="toggle-mobile-nav"><span></span><span></span><span></span></button>
             <ul class="top-nav">
               <li class="current-menu-item"><a href="#">Главная</a></li>
               <li><a href="#">Клуб покупателей</a></li>
@@ -218,12 +218,12 @@
           </div>
           <div class="item-tabs">
             <ul class="tabs-title">
-              <li class="detailed-descr active"><a href="#">Подробное описание</a></li>
-              <li class="reviews"><a href="#">Отзывы</a></li>
+              <li class="detailed-descr"><a href="#">Подробное описание</a></li>
+              <li class="reviews active"><a href="#">Отзывы</a></li>
               <li class="in-stock-descr"><a href="#">Наличие в магазинах</a></li>
             </ul>
             <div class="item-tabs__inner">
-              <div class="item-tab cf active">
+              <div class="item-tab cf">
                 <div class="all-chars">
                   <h3>Общие характеристики</h3>
                   <ul>
@@ -251,7 +251,38 @@
                   </ul>
                 </div>
               </div>
-              <div class="item-tab cf"></div>
+              <div class="item-tab review-tab cf active">
+                <div class="comment-form">
+                  <form>
+                    <textarea placeholder="Ваш отзыв"></textarea>
+                    <div class="comment-form__item"><img src="img/captcha.png"/></div>
+                    <div class="comment-form__item">
+                      <input type="text" placeholder="Код с картинки"/>
+                    </div>
+                    <div class="comment-form__item">
+                      <input type="submit" value="Отправить" class="btn"/>
+                    </div>
+                  </form>
+                </div>
+                <ul class="comment-list">
+                  <li class="comment-list__item cf">
+                    <div class="img-side"><img src="img/ava.png" alt=""/></div>
+                    <div class="comment-side">
+                      <p class="author-name">Анна Ивановна</p>
+                      <p class="comment-date">19 марта 2016 в 12:03</p>
+                      <p class="comment">Подгузники Pampers Premium - наши лучшие подгузники, которые обеспечивают защиту кожи “5 звезд” и дарят непревзойденную мягкость шелка. Это первые и единственные подгузники с впитывающими каналами, обеспечивающими до 12 часов сухости. Инновационная система впитывающих каналов позволяет равномерно распределять влагу, а материалы с особыми дышащими порами поддерживают здоровый микроклимат. Боковинки подгузников хорошо тянутся, обеспечивая ребенку максимальный комфорт и свободу движений, а также защищая подгузник от протеканий.</p>
+                    </div>
+                  </li>
+                  <li class="comment-list__item cf">
+                    <div class="img-side"><img src="img/ava.png" alt=""/></div>
+                    <div class="comment-side">
+                      <p class="author-name">Анна Ивановна</p>
+                      <p class="comment-date">19 марта 2016 в 12:03</p>
+                      <p class="comment">Подгузники Pampers Premium - наши лучшие подгузники, которые обеспечивают защиту кожи “5 звезд” и дарят непревзойденную мягкость шелка. Это первые и единственные подгузники с впитывающими каналами, обеспечивающими до 12 часов сухости. Инновационная система впитывающих каналов позволяет равномерно распределять влагу, а материалы с особыми дышащими порами поддерживают здоровый микроклимат. Боковинки подгузников хорошо тянутся, обеспечивая ребенку максимальный комфорт и свободу движений, а также защищая подгузник от протеканий.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
               <div class="item-tab cf in-stock-tab">
                 <h3>Адрес</h3>
                 <p class="heading">г. Тюмень</p>
@@ -411,6 +442,7 @@
         <input type="submit" value="ПОлучить"/>
       </form>
     </div>
+    <div class="shadow"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
     <script src="js/lib/lib.min.js"></script>

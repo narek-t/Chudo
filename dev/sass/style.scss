@@ -214,8 +214,48 @@ html, body {
 	background-color: #ffb400;
 	box-shadow: 0 2px 0 #ff9600, inset  0  5px 5px -5px rgba(0, 0, 0, .4);
 	padding: 16px 0;
+	position: relative;
 	.toggle-mobile-nav {
 		display: none;
+		width: 60px;
+		height: 30px;
+		background: #ffb400;
+		border-bottom-left-radius: 30px;
+		border-bottom-right-radius: 30px;
+		border: none;
+		outline: 0;
+		position: absolute;
+		bottom: -30px;
+		left: 50%;
+		margin-left: -30px;
+		box-shadow: 0 2px 0 #ff9600;
+		padding: 0 16px;
+		span {
+			display: block;
+			width: 100%;
+			height: 2px;
+			background: #fff;
+			margin: 0 auto 4px;
+			transition: all .2s ease-in-out;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			&:first-child {
+				margin-top: -5px;
+			}
+		}
+		&.active span:first-child {
+			transform: rotate(45deg);
+			margin: 0 0 -2px;
+		}
+		&.active span:nth-child(2) {
+			transform: rotate(-45deg);
+			margin: 0;
+		}
+		&.active span:last-child {
+			display: none;
+		}
+		
 	}
 	.top-nav {
 		margin: 0;
@@ -2711,6 +2751,86 @@ html, body {
 				}
 			}
 		}
+		.review-tab {
+			.comment-form {
+				text-align: right;
+				padding-bottom: 25px;
+				border-bottom: 1px solid #00a4df;
+			}
+			textarea {
+				display: block;
+				width: 100%;
+				resize: none;
+				padding: 15px;
+				border: 1px solid #ccc;
+				border-radius: 15px;
+				outline: 0;
+				height: 150px;
+				margin-bottom: 20px;
+			}
+			.comment-form__item {
+				display: inline-block;
+				vertical-align: middle;
+				margin: 0 10px;
+			}
+			input[type=text] {
+				width: 146px;
+				height: 40px;
+				border: 1px solid #ccc;
+				border-radius: 15px;
+				padding: 0 15px;
+				outline: 0;
+			}
+			img {
+				display: block;
+			}
+			input[type=submit] {
+				width: 164px;
+				height: 40px;
+				background-color: #92de00;
+				border-radius: 20px;
+				box-shadow: 0 2px 0 #6ba301;
+				border: none;
+				line-height: 44px;
+				outline: 0;
+				&:hover {
+					background: #82c600;
+				}
+			}
+			.comment-list {
+				margin: 25px 0 0;
+				padding: 0;
+				list-style-type: none;
+				&__item {
+					position: relative;
+					margin-bottom: 25px;
+					.img-side {
+						width: 85px;
+						float: left;
+					}
+					.comment-side {
+						margin-left: 85px;
+					}
+				}
+				.author-name {
+					font-size: 18px;
+					color: #00a4df;
+					margin: 0;
+					font-family: 'bsansbold';
+				}
+				.comment-date {
+					margin: 5px 0;
+					font-family: 'PT Sans';
+					color: #91c8fa;
+					font-size: 12px;
+				}
+				.comment {
+					margin: 0;
+					font: 14px/19px 'PT Sans';
+					color: #898989;
+				}
+			}
+		}
 		.in-stock-tab {
 			max-width: 600px;
 			margin-left: auto;
@@ -3511,7 +3631,7 @@ html, body {
 	flex-flow: row nowrap;
 	justify-content: space-between;
 	.number-side {
-		width: 500px;
+		max-width: 500px;
 		.number {
 			font-size: 16px;
 			color: #0072bc;
@@ -3789,7 +3909,7 @@ html, body {
 .personal-tab-col {
 	display: inline-block;
 	vertical-align: top;
-	margin-left: 65px;
+	margin-left: 55px;
 	&:first-child {
 		margin-left: 0;
 	}
@@ -3863,6 +3983,23 @@ html, body {
 			background: #81c302;
 		}
 	}
+}
+.shadow {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: rgba(0, 0, 0, .7);
+	z-index: 100;
+	display: none;
+	&.active {
+		display: block;
+	}
+}
+body.overflow {
+	overflow: hidden;
+	position: fixed;
 }
 
 @import "_media.scss";
