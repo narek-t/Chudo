@@ -575,10 +575,19 @@
 	.history-tab table tr td:nth-child(2) {
 		font-size: 8px;
 	}
-	// .history-tab table tr td:nth-child(2),
-	// .history-tab table tr th:nth-child(2) {
-	// 	display: none;
-	// }
+	.popup {
+		padding: 40px 40px 20px;
+	}
+	.mfp-close,
+	.mfp-close:active {
+		right: 10px;
+		top: 10px;
+	}
+	.popup .heading {
+		margin: 0 0 25px;
+		font-size: 25px;
+	}
+
 
 }
 
@@ -884,6 +893,23 @@
 	}
 	.history-tab .passed-orders .heading {
 		margin-top: 20px;
+	}
+	.popup__inner-row p {
+		width: 100%;
+		text-align: center;
+		margin: 0 0 5px;
+	}
+	.popup .heading {
+		font-size: 20px;
+	}
+	.popup__inner-row input {
+		width: 100%;
+	}
+	#login .popup__inner {
+		padding-right: 0;
+	}
+	.popup input[type=submit] {
+		padding: 0 20px;
 	}
 }
 
